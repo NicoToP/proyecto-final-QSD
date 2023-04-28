@@ -14,7 +14,7 @@ router.get('/', render);
 
 router.post('/addClient', addClient);
 router.get('/readClient', readClient);
-router.put('/updateClient', updateClient);
-router.delete('/deleteClient', deleteClient);
+router.put('/updateClient/:id', updateClient);
+router.delete('/deleteClient/:id', deleteClient);
 
 module.exports = router;

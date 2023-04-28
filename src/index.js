@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+/* const bodyParser = require('body-parser'); */
 const {create} = require('express-handlebars');
 const path = require('path');
 
@@ -14,6 +15,8 @@ app.set('port', process.env.PORT || 3000);
 
 // midddlewares
 app.use(morgan('dev'));
+app.use(express.urlencoded({extended: true}));
+/* app.use(bodyParser.urlencoded({extended: true})); */
 app.use('/', require('./routes/index.routes'));
 
 // starting

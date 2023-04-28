@@ -1,24 +1,49 @@
-# proyecto-final-QSD tatiana 
+# Proyecto final / Bootcamp QSD 2023
 
-Ideas 
+Este proyecto es el resultado del trabajo de desarrolladores en formacion como proyecto final para el bootcamp QSD 2023.
 
-platforma empleados 
-— plataforma para empleador donde puedan  selecionar un empleado y ver su ficha y editarla 
-—revisar en un calendario los horarios planificados y poder modificarloso vacaciones ,dias libres etc
-—pueda ver los proximas meetings conectados con google meet 
-— chat con oto empleado 
--crear  eventos de la empresa y eliminar los que ya culminaron
+## Necesidad/Problema a soluionar
 
+Conectar a la clinica veterinaria con los dueños de mascotas y sus necesidades
 
-automatization de cases
+## Funcionalidades
 
-- cotizar el coste de automatization agregando o eliminando extras
-- agenda citas para installation
-- dejar que de reclamos por fallas 
-- comentarios opiniones y calificaciones 
-- 
+La aplicación cuenta con las siguientes funcionalidades:
 
-y por otro lado el instalador
-- citas de clientes y modifier y eliminar done instalarla 
-- -crm de datos del cliente ,commentarios y satisfaction
+Rol de cliente:
 
+Rol de veterinario:
+
+- Registro de Medico vet
+- Registro de Dueños y cuales son sus mascotas
+- Registro de mascotas
+- Solicitar servicios guarderia/baños/citas
+- Gestionar guarderia/baños/citas
+-
+
+## Tecnologías contempladas
+
+La aplicación sera desarrollada utilizando las siguientes tecnologías:
+
+- ReactJS para el frontend
+- NodeJS y ExpressJS para el backend
+- MongoDB para la base de datos
+- Redux para el manejo del estado de la aplicación
+- Bootstrap para la maquetación y diseño responsivo
+- JWT para la autenticación y autorización de usuarios
+
+## Estado actual del proyecto
+
+Actualmente, el proyecto se encuentra en fase de planeacion y se espera implementar las siguientes funcionalidades:
+
+- Registro e inicio de sesión de usuarios.
+- Panel de administración para agregar, modificar y eliminar turnos.
+- Panel de empleados para visualizar los turnos asignados y solicitar cambios.
+- Sección de notificaciones para el usuario administrador/empleador.
+- Asignación de permisos para los usuarios.
+- Integración de la aplicación con un servicio de correo electrónico para enviar notificaciones a los empleados.
+- Mejoras en la interfaz de usuario para una mejor experiencia de usuario.
+
+## Contribuciones
+
+Este proyecto ha sido desarrollado por un grupo de desarrolladores junior como proyecto final del bootcamp QSD 2023. No se aceptarán contribuciones externas en este momento.

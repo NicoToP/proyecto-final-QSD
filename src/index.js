@@ -1,8 +1,5 @@
 const express = require('express');
 const morgan = require('morgan');
-/* const bodyParser = require('body-parser'); */
-const {create} = require('express-handlebars');
-const path = require('path');
 
 const app = express();
 
@@ -10,14 +7,17 @@ require('dotenv').config();
 
 require('./database/database');
 
-// configuracion
+// settings
 app.set('port', process.env.PORT || 3000);
 
 // midddlewares
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended: true}));
-/* app.use(bodyParser.urlencoded({extended: true})); */
-app.use('/', require('./routes/index.routes'));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+// routes
+app.use('/api/v1', require('./routes/owner.routes'));
+/* app.use('/api/v1', require('./routes/staff.routes')); */
 
 // starting
 app.listen(app.get('port'), () => {

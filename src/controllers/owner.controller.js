@@ -1,18 +1,24 @@
-const Owner = require('../models/Owner');
+//estamos definiendo el CRUD para la database
 
-const getAllOwners = async (req, res) => {
+/* se esta importando el modelo de Dueño(owner) difinido en owner.js
+en la carpeta models esta sintaxis se usa par importar modulos */
+const Owner = require('../models/Owner');
+const Pet = require('../models/Pet');
+
+exports.getAllOwners = async (req, res) => {
   try {
-    const owner = await Owner.find().lean();
-    return res.status(200).json(owner);
+    const owners = await Owner.find().lean();
+    return res.status(200).json(owners);
   } catch (error) {
     return res.status(500).json({message: error.message});
   }
 };
 
-const getOwnerById = async (req, res) => {
+exports.getOwner = async (req, res) => {
+  const {ownerId} = req.params;
+
   try {
-    const {id} = req.params;
-    const owner = await Owner.findById(id).lean();
+    const owner = await Owner.findById(ownerId).lean();
     if (!owner) return res.sendStatus(404);
     return res.status(200).json(owner);
   } catch (error) {
@@ -20,15 +26,14 @@ const getOwnerById = async (req, res) => {
   }
 };
 
-const createOwner = async (req, res) => {
+exports.createOwner = async (req, res) => {
+  const {name, email, phone} = req.body;
+
   try {
     const newOwner = new Owner({
-      name: {
-        first: req.body.first,
-        last: req.body.last,
-      },
-      email: req.body.email,
-      phone: req.body.phone,
+      name,
+      email,
+      phone,
     });
     await newOwner.save();
     return res.status(201).json(newOwner);
@@ -37,17 +42,20 @@ const createOwner = async (req, res) => {
   }
 };
 
-const updateOwnerById = async (req, res) => {
+exports.updateOwner = async (req, res) => {
+  const {ownerId} = req.params;
+  const {name, email, phone} = req.body;
+
   try {
-    const {id} = req.params;
-    const updateOwner = await Owner.findByIdAndUpdate(id, {
-      name: {
-        first: req.body.first,
-        last: req.body.last,
+    const updateOwner = await Owner.findByIdAndUpdate(
+      ownerId,
+      {
+        name,
+        email,
+        phone,
       },
-      email: req.body.email,
-      phone: req.body.phone,
-    });
+      {new: true}
+    );
 
     return res.status(204).json(updateOwner);
   } catch (error) {
@@ -55,23 +63,83 @@ const updateOwnerById = async (req, res) => {
   }
 };
 
-const removeOwnerById = async (req, res) => {
+exports.removeOwner = async (req, res) => {
+  const {ownerId} = req.params;
   try {
-    const {id} = req.params;
-    const deleteOwner = await Owner.findByIdAndDelete(id);
+    const deleteOwner = await Owner.findByIdAndDelete(ownerId);
 
     if (!deleteOwner) return res.sendStatus(404);
+
     return res.status(204).json();
   } catch (error) {
-    res.send('Error al eliminar Ownere');
-    console.error(error);
+    return res.status(500).json({message: error.message});
   }
 };
 
-module.exports = {
-  getAllOwners,
-  getOwnerById,
-  createOwner,
-  updateOwnerById,
-  removeOwnerById,
+exports.getAllPets = async (req, res) => {
+  const {ownerId} = req.params;
+  try {
+    const owner = await Owner.findById(ownerId).populate('pets');
+    if (!owner) return res.status(404);
+    return res.status(200).json(owner.pets);
+  } catch (error) {
+    return res.status(500).json({message: error.message});
+  }
+};
+
+exports.getPet = async (req, res) => {
+  const {ownerId, petId} = req.params;
+  try {
+    const owner = await Owner.findById(ownerId).populate('pets');
+    if (!owner) return res.status(404).json({error: 'owner not found'});
+
+    const pet = owner.pets.find(pet => pet._id == petId);
+    if (!pet) return res.status(404).json({error: 'pet not found'});
+
+    return res.status(201).json(pet);
+  } catch (error) {
+    return res.status(500).json({message: error.message});
+  }
+};
+
+exports.createPet = async (req, res) => {
+  const {ownerId} = req.params;
+  const {name, species, breed, weight, dateBirth, description} = req.body;
+
+  try {
+    const owner = await Owner.findById(ownerId);
+    if (!owner) return res.status(404).json({error: 'owner not found'});
+
+    const pet = new Pet({
+      name,
+      species,
+      breed,
+      weight,
+      dateBirth,
+      description,
+    });
+    pet.owner = owner;
+
+    await pet.save();
+    owner.pets.push(pet);
+
+    await owner.save();
+    res.status(201).json(pet);
+  } catch (error) {
+    return res.status(500).json({message: error.message});
+  }
+};
+
+exports.updatePet = async (req, res) => {
+  try {
+  } catch (error) {
+    return res.status(500).json({message: error.message});
+  }
+};
+
+exports.removePet = async (req, res) => {
+  try {
+  } catch (error) {
+    return res.status(500).json({message: error.message});
+  }
 };

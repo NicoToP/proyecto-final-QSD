@@ -1,6 +1,6 @@
 const Staff = require('../models/Staff');
 
-const getAllStaff = async (req, res) => {
+const getAllStaffs = async (req, res) => {
   try {
     const staff = await Staff.find().lean();
     return res.status(200).json(staff);
@@ -9,7 +9,7 @@ const getAllStaff = async (req, res) => {
   }
 };
 
-const getStaffById = async (req, res) => {
+const getStaff = async (req, res) => {
   try {
     const {id} = req.params;
     const staff = await Staff.findById(id).lean();
@@ -37,7 +37,7 @@ const createStaff = async (req, res) => {
   }
 };
 
-const updateStaffById = async (req, res) => {
+const updateStaff = async (req, res) => {
   try {
     const {id} = req.params;
     const {name, specialty, professionalCard, email, phone} = req.body;
@@ -53,7 +53,7 @@ const updateStaffById = async (req, res) => {
   }
 };
 
-const removeStaffById = async (req, res) => {
+const removeStaff = async (req, res) => {
   try {
     const {id} = req.params;
     const deleteStaff = await Staff.findByIdAndRemove(id);
@@ -66,9 +66,9 @@ const removeStaffById = async (req, res) => {
 };
 
 module.exports = {
-  getAllStaff,
-  getStaffById,
+  getAllStaffs,
+  getStaff,
   createStaff,
-  updateStaffById,
-  removeStaffById,
+  updateStaff,
+  removeStaff,
 };

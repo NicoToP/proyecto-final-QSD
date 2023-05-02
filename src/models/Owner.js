@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ownerSchema = new mongoose.Schema(
+let ownerSchema = new mongoose.Schema(
   {
     name: {
       first: {
@@ -20,10 +20,12 @@ const ownerSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    pets: {
-      type: [mongoose.ObjectId],
-      ref: 'Pet',
-    },
+    pets: [
+      {
+        type: mongoose.ObjectId,
+        ref: 'Pet',
+      },
+    ],
   },
   {
     versionKey: false,

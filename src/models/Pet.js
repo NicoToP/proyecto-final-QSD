@@ -22,10 +22,12 @@ const petSchema = new mongoose.Schema(
     description: {
       type: String,
     },
-    appointments: {
-      type: [mongoose.ObjectId],
-      ref: 'Appointments',
-    },
+    appointments: [
+      {
+        type: mongoose.ObjectId,
+        ref: 'Appointments',
+      },
+    ],
   },
   {
     versionKey: false,

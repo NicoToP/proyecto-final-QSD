@@ -36,4 +36,8 @@ ownerSchema.virtual('fullName').get(function () {
   return this.name.first + ' ' + this.name.last;
 });
 
+<<<<<<< HEAD
 module.exports = mongoose.model('Owner', ownerSchema);
+=======
+module.exports = mongoose.model('Owner', ownerSchema);
+>>>>>>> devNicolas

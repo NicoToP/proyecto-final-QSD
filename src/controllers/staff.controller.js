@@ -71,4 +71,8 @@ module.exports = {
   createStaff,
   updateStaff,
   removeStaff,
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> devNicolas

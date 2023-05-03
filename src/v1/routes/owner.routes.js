@@ -34,4 +34,8 @@ router.put('/:ownerId/pets/:petId', updatePet);
 
 router.delete('/:ownerId/pets/:petId', removePet);
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> devNicolas

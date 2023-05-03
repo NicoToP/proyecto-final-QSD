@@ -131,14 +131,44 @@ exports.createPet = async (req, res) => {
 };
 
 exports.updatePet = async (req, res) => {
+  const {ownerId, petId} = req.params;
+  const {name, species, breed, weight, dateBirth, description} = req.body;
   try {
+    const owner = await Owner.findById(ownerId).populate('pets');
+    if (!owner) return res.status(404).json({error: 'owner not found'});
+
+    const pet = owner.pets.find(pet => pet._id == petId);
+    if (!pet) return res.status(404).json({error: 'pet not found'});
+
+    pet.name = name || pet.name;
+    pet.species = species || pet.species;
+    pet.breed = breed || pet.breed;
+    pet.weight = weight || pet.weight;
+    pet.dateBirth = dateBirth || pet.dateBirth;
+    pet.description = description || pet.description;
+
+    await pet.save();
+
+    return res.status(200).json(pet);
   } catch (error) {
     return res.status(500).json({message: error.message});
   }
 };
 
 exports.removePet = async (req, res) => {
+  const {ownerId, petId} = req.params;
   try {
+    const owner = await Owner.findById(ownerId).populate('pets');
+    if (!owner) return res.status(404).json({error: 'owner not found'});
+
+    const pet = owner.pets.find(pet => pet._id == petId);
+    if (!pet) return res.status(404).json({error: 'pet not found'});
+
+    await Pet.deleteOne({_id: pet._id});
+    owner.pets.pull(pet);
+
+    await owner.save();
+    return res.status(204).json(pet);
   } catch (error) {
     return res.status(500).json({message: error.message});
   }

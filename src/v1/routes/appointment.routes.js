@@ -19,8 +19,4 @@ router.put('/:id', updateAppointment);
 
 router.delete('/:id', removeAppointment);
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> devNicolas

@@ -19,8 +19,4 @@ router.put('/:id', updateStaff);
 
 router.delete('/:id', removeStaff);
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> devNicolas

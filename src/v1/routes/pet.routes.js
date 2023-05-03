@@ -25,8 +25,8 @@ router.get('/:petId/appointments/:appointmentId', getAppointment);
 
 router.post('/:petId/appointments', createAppointment);
 
-//router.put('/:petId/appointments/:appointmentId', updateAppointment);
+router.put('/:petId/appointments/:appointmentId', updateAppointment);
 
-//router.delete('/:petId/appointments/:appointmentId', removeAppointment);
+router.delete('/:petId/appointments/:appointmentId', removeAppointment);
 
 module.exports = router;

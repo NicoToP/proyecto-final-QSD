@@ -119,6 +119,49 @@ exports.createAppointment = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
+
+};
+
+exports.updateAppointment = async (req, res) => {
+  const {petId, appointmentId} = req.params;
+  const {service, date, description, staff} = req.body;
+  try {
+    const pet = await Pet.findById(petId).populate('appointments');
+    if (!pet) return res.status(404).json({error: 'pet not found'});
+
+    const appointment = pet.appointments.find(appointment => appointment._id == appointmentId);
+    if (!appointment) return res.status(404).json({error: 'appointment not found'});
+
+    appointment.service= service || appointment.service;
+    appointment.date = date || appointment.date;
+    appointment.description = description || appointment.description;
+    appointment.staff = staff|| appointment.staff;
+
+    await appointment.save();
+
+    return res.status(200).json(appointment);
+  } catch (error) {
+    return res.status(500).json({message: error.message});
+  }
+};
+
+exports.removeAppointment = async (req, res) => {
+  const {petId, appointmentId} = req.params;
+  try {
+    const pet = await Pet.findById(petId).populate('appointments');
+    if (!pet) return res.status(404).json({error: 'pet not found'});
+
+    const appointment = pet.appointments.find(appointment => appointment._id == appointmentId);
+    if (!appointment) return res.status(404).json({error: 'appointment not found'});
+
+    await Appointment.deleteOne({_id: appointment._id});
+    pet.appointments.pull(appointment);
+
+    await pet.save();
+    return res.status(204).json(appointment);
+  } catch (error) {
+    return res.status(500).json({message: error.message});
+  }
 };
 
 

@@ -7,6 +7,11 @@ const {
   createOne,
   updateOneById,
   removeOneById,
+  getAllAppointments,
+  getAppointment,
+  createAppointment,
+  updateAppointment,
+  removeAppointment,
 } = require('../../controllers/pet.controller');
 
 router.get('/', getAll);

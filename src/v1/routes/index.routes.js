@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const {render} = require('../controllers/renderController');
+const {render} = require('../../controllers/renderController');
 
 const {
   addClient,
   readClient,
   updateClient,
   deleteClient,
-} = require('../controllers/ClientController');
+} = require('../../controllers/ClientController');
 
 router.get('/', render);
 

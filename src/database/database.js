@@ -3,17 +3,7 @@ const mongoose = require('mongoose');
 
 // Connecting to db
 async function connectToDB() {
-  //aca llama la funcion asincronica y conecta la aplicacion desde la base de datos
-  mongoose
-    .connect(process.env.MONGO_URI)
-    //aca de llama al metodo connect de moongose para establecer la conexion a la base de datos la URI se obtiene de una base de datos llamada mongo_uri
-    .then(() => {
-      //si la  conexion se establece correctamente se ejecuta el codigo dentro de la funcion then y muestra el mensaje ok
-      console.log('Succesful connected to', mongoose.connection.name);
-    })
-    .catch(error => {
-      console.error(error);
-      //en caso de no conectarse correctamente muestra el mensaje 
+
     });
 }
 

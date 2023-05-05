@@ -1,3 +1,5 @@
+//rutas de pets y obtener pets a traves de citas
+
 const express = require('express');
 const router = express.Router();
 
@@ -7,6 +9,11 @@ const {
   createOne,
   updateOneById,
   removeOneById,
+  getAllAppointments,
+  getAppointment,
+  createAppointment,
+  updateAppointment,
+  removeAppointment,
 } = require('../../controllers/pet.controller');
 
 router.get('/', getAll);

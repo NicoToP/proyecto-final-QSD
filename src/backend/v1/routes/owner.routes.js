@@ -1,3 +1,5 @@
+//ruta para obtener crud owners y crud pets a traves de owners
+
 const express = require('express');
 const router = express.Router();
 

@@ -4,8 +4,8 @@
   "description": "Este proyecto es el resultado del trabajo de desarrolladores en formacion como proyecto final para el bootcamp QSD 2023.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
   },
   "keywords": [],
   "author": "",

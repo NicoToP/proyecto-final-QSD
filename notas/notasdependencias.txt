@@ -1,4 +1,4 @@
-Morgan :registrará en la consola información como la dirección IP del cliente, la fecha y hora de la solicitud, la ruta de la solicitud y el código de estado de la respuesta del servidor.
+Morgan: registrará en la consola información como la dirección IP del cliente, la fecha y hora de la solicitud, la ruta de la solicitud y el código de estado de la respuesta del servidor.
 Esta información es útil para depurar y monitorear el servidor, ya que le permite al desarrollador ver qué solicitudes se están realizando al servidor, cuándo se están realizando y cómo está respondiendo el servidor a esas solicitudes.
 
 
@@ -85,11 +85,11 @@ Por ejemplo, digamos que tienes una aplicación que se conecta a una base de dat
 Luego, cuando la aplicación se ejecuta, puede leer el valor de DATABASE_URL desde la variable de entorno y utilizarlo para conectarse a la base de datos. Si cambias la URL de la base de datos más adelante, solo tienes que actualizar el valor de la variable de entorno, en lugar de tener que actualizar el código de la aplicación.
 
 
-"scripts": 
-"start": "node src/index.js",
-"dev": "nodemon src/index.js":
 El contenido de cada script es el comando que se ejecuta cuando se llama a ese script. En este caso, el comando para el script "start" es node src/index.js, lo que significa que cuando ejecutas npm start desde la línea de comandos, se ejecutará el archivo src/index.js utilizando el comando node. Este es el comando que se utilizaría en un entorno de producción.
 El comando para el script "dev" es nodemon src/index.js. Nodemon es una herramienta que se utiliza en el desarrollo de aplicaciones Node.js para reiniciar automáticamente la aplicación cuando se detectan cambios en el código fuente. Al utilizar el comando nodemon en lugar de node, la aplicación se reiniciará automáticamente cada vez que se guarden cambios en el archivo src/index.js, lo que hace que el proceso de desarrollo sea más eficiente. Este es el comando que se utilizaría en un entorno de desarrollo.
+"scripts": 
+  "start": "node src/index.js",
+  "dev": "nodemon src/index.js":
 
 
 entorno de produccion  y de desarrollo:
@@ -114,11 +114,3 @@ cors:CORS es una medida de seguridad para evitar que una página web haga solici
 
 bcryptjs:La dependencia bcryptjs es una librería de JavaScript que proporciona una función para el cifrado de contraseñas. Esta función se utiliza para cifrar las contraseñas de los usuarios antes de guardarlas en una base de datos.La razón por la que es importante cifrar las contraseñas es porque las contraseñas no cifradas pueden ser vulnerables a ataques de hackers. Si una base de datos de contraseñas es pirateada, los atacantes pueden obtener las contraseñas sin cifrar y utilizarlas para acceder a las cuentas de los usuarios.
 La función de cifrado de contraseñas de bcryptjs utiliza una técnica conocida como hashing, que convierte la contraseña en una serie de caracteres aleatorios que no se pueden revertir a la contraseña original. De esta manera, incluso si un atacante obtiene acceso a la base de datos de contraseñas, no puede obtener las contraseñas originales sin descifrarlas, lo que es un proceso extremadamente difícil.
-
-
-
-
-
-
-
-

@@ -4,21 +4,16 @@
   "description": "Este proyecto es el resultado del trabajo de desarrolladores en formacion como proyecto final para el bootcamp QSD 2023.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/backend/index.js",
-    "dev": "nodemon src/backend/index.js"
+    "start": "node backend/index.js",
+    "dev": "nodemon backend/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "bootstrap": "^5.2.3",
-    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
-    "helmet": "^6.1.5",
-    "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.0",
     "morgan": "^1.10.0"
   },

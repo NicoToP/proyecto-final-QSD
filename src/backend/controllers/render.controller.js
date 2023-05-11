@@ -17,3 +17,8 @@ exports.renderProducts = (req, res) => {
 exports.renderContact = (req, res) => {
   res.render('contact', {contact: true});
 };
+
+exports.renderProfile = (req, res) => {
+  res.render('profile', {profile: true});
+};
+

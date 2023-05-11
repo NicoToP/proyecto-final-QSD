@@ -10,21 +10,11 @@ Conectar una clinica veterinaria con los dueños de mascotas y sus necesidades.
 
 La aplicación cuenta con las siguientes funcionalidades:
 
-Rol de cliente:
-
-Rol de veterinario:
-
-- Registro de Medico vet
-- Registro de Dueños y cuales son sus mascotas
-- Registro de mascotas
-- Solicitar servicios guarderia/baños/citas
-- Gestionar guarderia/baños/citas
-
 ## Tecnologías utilizadas
 
 La aplicación sera desarrollada utilizando las siguientes tecnologías:
 
-- Hanblebars para el frontend
+- React para el frontend
 - NodeJS y ExpressJS para el backend
 - MongoDB para la base de datos
 - Bootstrap para la maquetación y diseño responsivo

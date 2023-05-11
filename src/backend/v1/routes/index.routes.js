@@ -7,6 +7,7 @@ const {
   renderServices,
   renderProducts,
   renderContact,
+  renderProfile,
 } = require('../../controllers/render.controller');
 
 router.get('/', renderIndex);
@@ -18,6 +19,8 @@ router.get('/services', renderServices);
 router.get('/products', renderProducts);
 
 router.get('/contact', renderContact);
+
+router.get('/profile', renderProfile);
 
 module.exports = router;
 //exporta para usar en otros archivos

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const petSchema = new mongoose.Schema(
   {
-    name: {
+    namePet: {
       type: String,
       required: true,
     },

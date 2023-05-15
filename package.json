@@ -7,7 +7,7 @@
     "dev": "nodemon backend --watch backend",
     "debug": "nodemon --inspect backend --watch backend",
     "build:frontend": "npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "node backend"
+    "start": "npm install --prefix backend && node backend"
   },
   "repository": {
     "type": "git",

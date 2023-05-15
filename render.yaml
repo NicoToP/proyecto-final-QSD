@@ -1,0 +1,19 @@
+services:
+  - name: frontend
+    buildCommand: npm run build:frontend
+    directory: client
+    env:
+      - NODE_ENV: production
+    routes:
+      - src: /
+        dest: public
+    github:
+      autoDeploy: true
+
+  - name: backend
+    buildCommand: npm install
+    startCommand: npm start
+    env:
+      - NODE_ENV: production
+    github:
+      autoDeploy: true

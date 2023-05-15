@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon backend --watch backend",
     "debug": "nodemon --inspect backend --watch backend",
-    "build:frontend": "npm run build --prefix frontend",
+    "build:frontend": "npm install --prefix frontend && npm run build --prefix frontend",
     "start": "node backend"
   },
   "repository": {

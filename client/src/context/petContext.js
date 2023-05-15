@@ -11,11 +11,19 @@ const petsContext = createContext();
 
 export const usePets = () => {
   const context = useContext(petsContext);
+  if (!context) throw new Error('Pets Provider is missing');
   return context;
 };
 
 export const PetProvider = ({children}) => {
   const [pets, setPets] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await getPetsRequests();
+      setPets(res.data);
+    })();
+  }, []);
 
   const getPets = async () => {
     try {
@@ -58,12 +66,12 @@ export const PetProvider = ({children}) => {
     if (res.status === 204) setPets(pets.filter(pet => pet._id !== id));
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     getPets();
-  }, []);
+  }, []); */
 
   return (
-    <petsContext.Provider value={{pets, getPets, getPet, createPet, updatePet, deletePet}}>
+    <petsContext.Provider value={{pets, setPets, getPets, getPet, createPet, updatePet, deletePet}}>
       {children}
     </petsContext.Provider>
   );

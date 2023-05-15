@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon server --watch server",
     "debug": "nodemon --inspect server --watch server",
-    "build:frontend": "npm install --prefix client && npm run build --prefix client",
-    "start": "npm install && node server"
+    "build:frontend": "npm install --prefix client && npm run build --prefix client && rmdir -rf client/node_modules",
+    "start": "node server"
   },
   "repository": {
     "type": "git",

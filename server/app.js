@@ -26,4 +26,8 @@ app.use('/api/v1/pets', petRoutes);
 app.use('/api/v1/appointments', appointmentRoutes);
 app.use('/api/v1/staffs', staffRoutes);
 
+app.get('*', (req, res) => {
+  res.send(path.join(__dirname, '../client/build/index.html'));
+});
+
 export {app};

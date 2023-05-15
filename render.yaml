@@ -1,4 +1,5 @@
 services:
+  - type: web
   - name: frontend
     buildCommand: npm run build:frontend
     directory: client

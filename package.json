@@ -1,24 +1,29 @@
 {
-  "name": "proyecto-final",
+  "name": "final-project-qsd",
   "version": "1.0.0",
-  "description": "Este proyecto es el resultado del trabajo de desarrolladores en formacion como proyecto final para el bootcamp QSD 2023.",
-  "main": "index.js",
+  "description": "This is a final project for the bootcamp QSD from BIT/KeyCode",
+  "type" : "module",
   "scripts": {
-    "start": "node src/backend/index.js",
-    "dev": "nodemon src/backend/index.js"
+    "dev": "nodemon server --watch server",
+    "debug": "nodemon --inspect server --watch server",
+    "build:frontend": "npm install --prefix client && npm run build --prefix client && rm -rf client/node_modules",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebastian-Leal-S/proyecto-final-QSD.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sebastian-Leal-S/proyecto-final-QSD/issues"
+  },
+  "homepage": "https://github.com/Sebastian-Leal-S/proyecto-final-QSD#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-handlebars": "^7.0.7",
-    "helmet": "^6.1.5",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.1.0",
+    "mongoose": "^7.1.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {

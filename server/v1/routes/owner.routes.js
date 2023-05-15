@@ -1,5 +1,3 @@
-//ruta para obtener crud owners y crud pets a traves de owners
-
 const express = require('express');
 const router = express.Router();
 
@@ -14,7 +12,7 @@ const {
   createPet,
   updatePet,
   removePet,
-} = require('../../controllers/owner.Controller');
+} = require('../../controllers/owner.controller');
 
 router.get('/', getAllOwners);
 

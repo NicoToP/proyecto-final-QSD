@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const path = require('path');
 
 const app = express();
-const __dirnameDeploy = path.dirname(__filename);
 
 require('dotenv').config();
 
@@ -18,7 +17,7 @@ app.use(express.json()); // para manejo de datos en formato JSON
 app.use(express.urlencoded({extended: false})); // para manejo de datos en formato de URL codificada
 
 // archivos estaticos
-app.use(express.static(path.join(__dirnameDeploy, '../frontend/build')));
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // routes
 app.use('/api/v1/owners', require('./v1/routes/owner.routes'));

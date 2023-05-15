@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-let ownerSchema = new mongoose.Schema(
+const ownerSchema = new mongoose.Schema(
   {
     name: {
       first: {
@@ -28,6 +28,7 @@ let ownerSchema = new mongoose.Schema(
     ],
   },
   {
+    timestamps: true,
     versionKey: false,
   }
 );
@@ -36,4 +37,4 @@ ownerSchema.virtual('fullName').get(function () {
   return this.name.first + ' ' + this.name.last;
 });
 
-module.exports = mongoose.model('Owner', ownerSchema);
+export default mongoose.model('Owner', ownerSchema);

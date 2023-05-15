@@ -1,22 +1,18 @@
-const express = require('express');
-//llama la depencia express
-const router = express.Router();
-//crea un objeto router para definir la ruta router es un objeto que utilizamos para definir rutas en una aplicación de Express.
+import {Router} from 'express';
 
-const {
+import {
   getAllAppointments,
   getAppointment,
   createAppointment,
   updateAppointment,
   removeAppointment,
-  getAllStaff,
+  getStaff,
   updateStaff,
   createStaff,
   removeStaff,
-  getStaff,
-} = require('../../controllers/appointment.controller');
-//aca llamamos a la los controladores en appointment.controller
+} from '../../controllers/appointment.controller.js';
 
+const router = Router();
 
 router.get('/', getAllAppointments);
 
@@ -35,7 +31,5 @@ router.post('/:appointmentId/staffs', createStaff);
 router.put('/:appointmentId/staffs/:staffId', updateStaff);
 
 router.delete('/:appointmentId/staffs/:staffId', removeStaff);
-//aca se llama cada crud creado en appointment y se asigna si se llama todos o por id 
 
-module.exports = router;
-//se exporta la ruta para usar en otra aplicacion
+export default router;

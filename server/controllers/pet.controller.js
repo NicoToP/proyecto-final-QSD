@@ -1,13 +1,7 @@
-//se controla el crud de mascotas con consultas desde mascotas y tambien de cita a traves de mascotas
+import Pet from '../models/Pet.js';
+import Appointment from '../models/Appointment.js';
 
-const Pet = require('../models/Pet');
-const Appointment = require('../models/Appointment');
-//se declara la varible pet y se llama a la carpeta models lo cual tiene adentro pet
-//y tambien de cita
-
-//llama todos los datos de pet
-
-exports.getAll = async (req, res) => {
+export const getAll = async (req, res) => {
   try {
     const pets = await Pet.find().lean();
     return res.status(200).json(pets);
@@ -16,8 +10,7 @@ exports.getAll = async (req, res) => {
   }
 };
 
-//obtiene el id de pet
-exports.getOneById = async (req, res) => {
+export const getOneById = async (req, res) => {
   try {
     const {id} = req.params;
     const pet = await Pet.findById(id).lean();
@@ -29,7 +22,7 @@ exports.getOneById = async (req, res) => {
 };
 
 //se crea nuevo pet con los parametros
-exports.createOne = async (req, res) => {
+export const createOne = async (req, res) => {
   try {
     const {namePet, species, breed, weight, dateBirth, description} = req.body;
 
@@ -49,7 +42,7 @@ exports.createOne = async (req, res) => {
 };
 
 //actualiza la informacion del pet
-exports.updateOneById = async (req, res) => {
+export const updateOneById = async (req, res) => {
   try {
     const {id} = req.params;
     const {name, species, breed, weight, dateBirth, description} = req.body;
@@ -66,7 +59,7 @@ exports.updateOneById = async (req, res) => {
 };
 
 //se elimina la mascota
-exports.removeOneById = async (req, res) => {
+export const removeOneById = async (req, res) => {
   try {
     const {id} = req.params;
     const deletePet = await Pet.findByIdAndRemove(id);
@@ -78,7 +71,7 @@ exports.removeOneById = async (req, res) => {
   }
 };
 //se obtiene todas  las citas a traves del pet id
-exports.getAllAppointments = async (req, res) => {
+export const getAllAppointments = async (req, res) => {
   const {petId} = req.params;
   try {
     const pet = await Pet.findById(petId).populate('appointments');
@@ -90,7 +83,7 @@ exports.getAllAppointments = async (req, res) => {
 };
 
 //se obtiene una cita a traves del id pet
-exports.getAppointment = async (req, res) => {
+export const getAppointment = async (req, res) => {
   const {petId, appointmentId} = req.params;
   try {
     const pet = await Pet.findById(petId).populate('appointments');
@@ -105,7 +98,7 @@ exports.getAppointment = async (req, res) => {
   }
 };
 //se crea una cita a traves del pet id
-exports.createAppointment = async (req, res) => {
+export const createAppointment = async (req, res) => {
   const {petId} = req.params;
   const {service, date, description, staff} = req.body;
 
@@ -132,7 +125,7 @@ exports.createAppointment = async (req, res) => {
   }
 };
 //se actualiza la la cita a traves del id pet
-exports.updateAppointment = async (req, res) => {
+export const updateAppointment = async (req, res) => {
   const {petId, appointmentId} = req.params;
   const {service, date, description, staff} = req.body;
   try {
@@ -156,7 +149,7 @@ exports.updateAppointment = async (req, res) => {
 };
 
 //se elimina la cita a atraves del id pet
-exports.removeAppointment = async (req, res) => {
+export const removeAppointment = async (req, res) => {
   const {petId, appointmentId} = req.params;
   try {
     const pet = await Pet.findById(petId).populate('appointments');

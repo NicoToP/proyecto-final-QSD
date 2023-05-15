@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const staffSchema = new mongoose.Schema(
   {
@@ -30,6 +30,7 @@ const staffSchema = new mongoose.Schema(
     },
   },
   {
+    timestamps: true,
     versionKey: false,
   }
 );
@@ -38,4 +39,4 @@ staffSchema.virtual('fullName').get(function () {
   return this.name.first + ' ' + this.name.last;
 });
 
-module.exports = mongoose.model('Staff', staffSchema);
+export default mongoose.model('Staff', staffSchema);

@@ -1,36 +1,8 @@
-const express = require('express');
-const morgan = require('morgan');
-const path = require('path');
-const {dirname} = require('path');
-const {fileURLToPath} = require('url');
+import {app} from './app.js';
+import {connectDB} from './database/mongo.js';
+import {PORT} from './config.js';
 
-const app = express();
-const currentModule = require.main.filename;
-const currentModulePath = fileURLToPath(currentModule);
-const __dirname = dirname(currentModulePath);
-
-require('dotenv').config();
-
-require('./database/database');
-
-// settings
-app.set('PORT', process.env.PORT || 4000);
-
-// middlewares
-app.use(morgan('dev')); // para registro de solicitudes en formato 'dev'
-app.use(express.json()); // para manejo de datos en formato JSON
-app.use(express.urlencoded({extended: false})); // para manejo de datos en formato de URL codificada
-
-// archivos estaticos
-app.use(express.static(path.join(__dirname, '../frontend/build')));
-
-// routes
-app.use('/api/v1/owners', require('./v1/routes/owner.routes'));
-app.use('/api/v1/pets', require('./v1/routes/pet.routes'));
-app.use('/api/v1/appointments', require('./v1/routes/appointment.routes'));
-app.use('/api/v1/staffs', require('./v1/routes/staff.routes'));
-
-// starting
-app.listen(app.get('PORT'), () => {
-  console.log(`Server on port ${app.get('PORT')}`);
+connectDB();
+app.listen(PORT, () => {
+  console.log(`Server on port ${PORT}`);
 });

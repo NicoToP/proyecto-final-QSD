@@ -2,6 +2,7 @@
   "name": "final-project-qsd",
   "version": "1.0.0",
   "description": "This is a final project for the bootcamp QSD from BIT/KeyCode",
+  "type" : "module",
   "scripts": {
     "dev": "nodemon server --watch server",
     "debug": "nodemon --inspect server --watch server",

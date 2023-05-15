@@ -1,7 +1,6 @@
-const express = require('express');
-const router = express.Router();
+import {Router} from 'express';
 
-const {
+import {
   getAllOwners,
   getOwner,
   createOwner,
@@ -12,7 +11,9 @@ const {
   createPet,
   updatePet,
   removePet,
-} = require('../../controllers/owner.controller');
+} from '../../controllers/owner.controller.js';
+
+const router = Router();
 
 router.get('/', getAllOwners);
 
@@ -34,4 +35,4 @@ router.put('/:ownerId/pets/:petId', updatePet);
 
 router.delete('/:ownerId/pets/:petId', removePet);
 
-module.exports = router;
+export default router;

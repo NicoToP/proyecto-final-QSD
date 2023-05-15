@@ -1,9 +1,6 @@
-//rutas de pets y obtener pets a traves de citas
+import {Router} from 'express';
 
-const express = require('express');
-const router = express.Router();
-
-const {
+import {
   getAll,
   getOneById,
   createOne,
@@ -14,7 +11,9 @@ const {
   createAppointment,
   updateAppointment,
   removeAppointment,
-} = require('../../controllers/pet.controller');
+} from '../../controllers/pet.controller.js';
+
+const router = Router();
 
 router.get('/', getAll);
 
@@ -36,4 +35,4 @@ router.put('/:petId/appointments/:appointmentId', updateAppointment);
 
 router.delete('/:petId/appointments/:appointmentId', removeAppointment);
 
-module.exports = router;
+export default router;

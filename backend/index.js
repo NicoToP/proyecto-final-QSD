@@ -1,11 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const {dirname} = require('path');
-const {fileURLToPath} = require('url');
 
 const app = express();
-const __dirnameDeploy = dirname(fileURLToPath(require.main.filename));
+const __dirnameDeploy = path.dirname(__filename);
 
 require('dotenv').config();
 

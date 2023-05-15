@@ -1,6 +1,6 @@
 services:
-  - type: web
   - name: frontend
+    type: web
     buildCommand: npm run build:frontend
     directory: client
     env:
@@ -12,6 +12,7 @@ services:
       autoDeploy: true
 
   - name: backend
+    type: web
     buildCommand: npm install
     startCommand: npm start
     env:

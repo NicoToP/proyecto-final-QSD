@@ -1,8 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const {dirname} = require('path');
 
 const app = express();
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 require('dotenv').config();
 
@@ -16,8 +18,10 @@ app.use(morgan('dev')); // para registro de solicitudes en formato 'dev'
 app.use(express.json()); // para manejo de datos en formato JSON
 app.use(express.urlencoded({extended: false})); // para manejo de datos en formato de URL codificada
 
+// archivos estaticos
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
 // routes
-app.use('/', require('./v1/routes/index.routes'));
 app.use('/api/v1/owners', require('./v1/routes/owner.routes'));
 app.use('/api/v1/pets', require('./v1/routes/pet.routes'));
 app.use('/api/v1/appointments', require('./v1/routes/appointment.routes'));

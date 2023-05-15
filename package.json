@@ -4,7 +4,10 @@
   "description": "Este proyecto es el desarrollo hecho por programadores en formacion para el proyecto integrado realizado en el Bootcamp QSD-2023.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon backend --watch backend",
+    "debug": "nodemon --inspect backend --watch backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "start": "node backend"
   },
   "repository": {
     "type": "git",

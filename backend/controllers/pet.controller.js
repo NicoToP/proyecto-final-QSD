@@ -32,6 +32,7 @@ exports.getOneById = async (req, res) => {
 exports.createOne = async (req, res) => {
   try {
     const {namePet, species, breed, weight, dateBirth, description} = req.body;
+
     const newPet = new Pet({
       namePet,
       species,

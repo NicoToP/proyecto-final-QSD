@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/pets" element={<PetPage />} />
+          <Route path="/pets/:id" element={<PetPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Toaster />

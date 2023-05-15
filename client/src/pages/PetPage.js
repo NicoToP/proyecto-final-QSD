@@ -24,6 +24,7 @@ export function PetPage() {
         setPet(res.data);
       }
     })();
+    // eslint-disable-next-line
   }, [params.id]);
 
   return (

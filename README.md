@@ -23,4 +23,3 @@ La aplicación sera desarrollada utilizando las siguientes tecnologías:
 
 - Sebastian Leal ([@Sebastian-Leal-S](https://github.com/Sebastian-Leal-S/))
 - Nicolas Torres ([@NicoToP](https://github.com/NicoToP))
-- Tatiana Londono ([@tlondono](https://github.com/tlondono))

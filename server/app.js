@@ -1,7 +1,8 @@
 import express from "express";
 import morgan from "morgan";
 import path from "path";
-import { dirname, fileURLToPath } from "path";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 import ownerRoutes from "./v1/routes/owner.routes.js";
 import petRoutes from "./v1/routes/pet.routes.js";

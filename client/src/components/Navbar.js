@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export function Navbar() {
+  const location = useLocation();
+
   const menuData = [
     {
       path: "/",
@@ -21,6 +23,10 @@ export function Navbar() {
     {
       path: "/contact",
       name: "Contactanos",
+    },
+    {
+      path: "/pets",
+      name: "Mascotas",
     },
   ];
 

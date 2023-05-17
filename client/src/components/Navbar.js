@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
 
 export function Navbar() {
+  const menuData = [
+    {
+      path: "/",
+      name: "Home",
+    },
+    {
+      path: "/appointments",
+      name: "Citas Medicas",
+    },
+    {
+      path: "/services",
+      name: "Servicios",
+    },
+    {
+      path: "/products",
+      name: "Productos",
+    },
+    {
+      path: "/contact",
+      name: "Contactanos",
+    },
+  ];
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
@@ -10,7 +33,7 @@ export function Navbar() {
             alt="Logo"
             width="30"
             height="30"
-            className="d-inline-block align-text-top"
+            className="d-inline-block align-text-top mr-3"
           />
           Vet-Vet
         </Link>
@@ -26,23 +49,18 @@ export function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <Link to="/">INICIO</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/appointments">CITAS MEDICAS</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/services">SERVICIOS</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/products">PRODUCTOS</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/contact">CONTACTANOS</Link>
-            </li>
+          <ul className="navbar-nav ms-auto">
+            {menuData.map((item) => (
+              <li key={item.name} className="nav-item">
+                <Link to={item.path} className="nav-link">
+                  <div className="list-item">{item.name}</div>
+                </Link>
+              </li>
+            ))}
           </ul>
+          <Link to="/signUp" className="btn btn-success">
+            Sign Up
+          </Link>
         </div>
       </div>
     </nav>

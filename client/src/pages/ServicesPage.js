@@ -15,7 +15,7 @@ export function ServicesPage() {
 
           <h1>Precios</h1>
 
-          <div class="table-responsive">
+          <div className="table-responsive">
             <table className="table table-striped table-bordered">
               <thead>
                 <tr>
@@ -89,7 +89,7 @@ export function ServicesPage() {
 
           <h1>Precios</h1>
 
-          <div class="table-responsive">
+          <div className="table-responsive">
             <table className="table table-striped table-bordered">
               <thead>
                 <tr>

@@ -1,11 +1,11 @@
-import {usePets} from '../context/petContext';
-import {Link} from 'react-router-dom';
-import {PetCard} from '../components/PetCard';
-import {VscEmptyWindow} from 'react-icons/vsc';
-import {MdPets} from 'react-icons/md';
+import { usePets } from "../context/petContext";
+import { Link } from "react-router-dom";
+import { PetCard } from "../components/PetCard";
+import { VscEmptyWindow } from "react-icons/vsc";
+import { MdPets } from "react-icons/md";
 
 export function HomePage() {
-  const {pets} = usePets();
+  const { pets } = usePets();
 
   const renderPet = () => {
     if (pets.length === 0)
@@ -23,7 +23,7 @@ export function HomePage() {
 
     return (
       <div className="col">
-        {pets.map(pet => (
+        {pets.map((pet) => (
           <PetCard pet={pet} key={pet._id} />
         ))}
       </div>
@@ -33,7 +33,7 @@ export function HomePage() {
   return (
     <main>
       <div className="d-flex align-items-center my-3">
-        <h1 className="fs-6">Mascotas ({pets.length})</h1>
+        <h1 className="fs-3">Mascotas ({pets.length})</h1>
         <Link to="/pets">
           <MdPets className="align-self-center mx-2" />
           Nueva mascota

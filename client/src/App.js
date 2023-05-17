@@ -8,27 +8,29 @@ import {
   ProductsPage,
 } from "./pages/index";
 import { PetProvider } from "./context/petContext";
-import { Navbar } from "./components/NavBar";
+import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <div className="container-fluid p-0">
+    <>
       <Navbar />
-      <PetProvider>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/pets" element={<PetPage />} />
-          <Route path="/pets/:id" element={<PetPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-        <Toaster />
-      </PetProvider>
+      <div className="container-fluid">
+        <PetProvider>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/pets" element={<PetPage />} />
+            <Route path="/pets/:id" element={<PetPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+          <Toaster />
+        </PetProvider>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

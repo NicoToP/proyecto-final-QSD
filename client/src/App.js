@@ -6,6 +6,7 @@ import {
   PetPage,
   ServicesPage,
   ProductsPage,
+  AppointmentsPage
 } from "./pages/index";
 import { PetProvider } from "./context/petContext";
 import { Navbar } from "./components/Navbar";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/pets/:id" element={<PetPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/products" element={<ProductsPage />} />
+            <Route path="/appointments" element={<AppointmentsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Toaster />

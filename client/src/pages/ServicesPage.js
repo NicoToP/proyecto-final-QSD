@@ -49,7 +49,7 @@ export function ServicesPage() {
           </div>
           <div className="text-center">
             <Link
-              href="#"
+              to="#"
               className="btn btn-primary text-wrap"
               role="button"
               data-bs-toggle="button"
@@ -123,7 +123,7 @@ export function ServicesPage() {
           </div>
           <div className="text-center">
             <Link
-              href="#"
+              to="#"
               className="btn btn-primary text-wrap"
               role="button"
               data-bs-toggle="button"

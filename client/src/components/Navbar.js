@@ -25,15 +25,15 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div className="container">
-        <Link className="navbar-brand" to="/">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary bg-gradient ">
+      <div className="container-fluid p-2">
+        <Link className="navbar-brand fs-2 mx-4" to="/">
           <img
             src="/img/logo.png"
             alt="Logo"
-            width="30"
-            height="30"
-            className="d-inline-block align-text-top mr-3"
+            width="70"
+            height="70"
+            className="d-inline-block align-text-center mx-2"
           />
           Vet-Vet
         </Link>

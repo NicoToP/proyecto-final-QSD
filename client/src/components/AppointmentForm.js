@@ -1,7 +1,7 @@
 export function AppointmentForm() {
   return (
     <>
-      <form className="container mx-auto p-5 rounded-4">
+      <form className="container mx-auto rounded-4">
         <h3 className="text-center mb-4">Agenda tu cita</h3>
         <div className="row">
           <div className="col">
@@ -49,8 +49,8 @@ export function AppointmentForm() {
 
         <hr />
 
-        <div className="row">
-          <div className="col">
+        <div className="row justify-content-center">
+          <div className="col-6">
             <div className="form-outline">
               <label for="exampleFormControlTextarea1" className="form-label">
                 ¿Deseas contarnos algo extra?

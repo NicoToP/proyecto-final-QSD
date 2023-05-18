@@ -13,7 +13,7 @@ export function AppointmentsPage() {
 
       <div className="row m-5 bg-secondary bg-opacity-10 rounded-4 p-3">
         <div className="col-md-7 col-sm-12 p-5">
-          <h1 className="text-center">~Consulta Presencial~</h1>
+          <h1 className="text-center">~ Consulta Presencial ~</h1>
 
           <div className="container mt-5">
             <p className=" m-0 fs-3">
@@ -52,6 +52,8 @@ export function AppointmentsPage() {
             className="img-fluid mx-auto d-block"
             src="/img/veterinario.png"
             alt=""
+            height="450"
+            width="450"
           />
         </div>
       </div>
@@ -61,10 +63,12 @@ export function AppointmentsPage() {
             className="img-fluid mx-auto d-block"
             src="/img/veterinarios.png"
             alt=""
+            height="450"
+            width="450"
           />
         </div>
         <div className="col-md-7 col-sm-12 p-5">
-          <h1 className="text-center">~Consulta Virtual o Domicilio~</h1>
+          <h1 className="text-center">~ Consulta Virtual o Domicilio ~</h1>
           <div className="container mt-5">
             <p className="p-0 m-0 fs-3">¡No te preocupes si no puedes salir!</p>
             <p className="p-0 m-0 fs-4">

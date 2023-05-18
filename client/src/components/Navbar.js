@@ -19,8 +19,8 @@ export function Navbar() {
       name: "Productos",
     },
     {
-      path: "/contact",
-      name: "Contactanos",
+      path: "/quienesomos",
+      name: "Quienes somos",
     },
     {
       path: "/perfil",

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { BsFacebook, BsTiktok, BsInstagram } from "react-icons/bs";
 
 export function Footer() {
   return (
@@ -22,17 +23,38 @@ export function Footer() {
           <div className="col-xs-12 col-md-3 col-lg-3">
             <p className="h3">Secciones</p>
             <ul>
-              <li className="fs-4">Citas médicas</li>
-              <li className="fs-4">Servicios</li>
-              <li className="fs-4">Productos</li>
+              <li className="fs-4 ">
+                <Link to="/appointments" className="text-light">Citas médicas</Link>
+              </li>
+              <li className="fs-4">
+                <Link to="/services" className="text-light">Servicios</Link>
+              </li>
+              <li className="fs-4">
+                <Link to="/products" className="text-light">Productos</Link>
+              </li>
             </ul>
           </div>
           <div className="col-xs-12 col-md-3 col-lg-3">
             <p className="h3">Nuestras redes</p>
             <ul>
-              <li className="fs-4">Facebook</li>
-              <li className="fs-4">Instagram</li>
-              <li className="fs-4">Tik Tok</li>
+              <li className="fs-4">
+                <Link to="https://es-la.facebook.com/" target="_blank" className="text-light">
+                  <BsFacebook className="align-self-cente mx-2"></BsFacebook>
+                  Facebook
+                </Link>
+              </li>
+              <li className="fs-4">
+                <Link to="https://www.instagram.com/" target="_blank" className="text-light">
+                  <BsInstagram className="align-self-cente mx-2"></BsInstagram>
+                  Instagram
+                </Link>
+              </li>
+              <li className="fs-4">
+                <Link to="https://www.tiktok.com/es/" target="_blank" className="text-light">
+                  <BsTiktok className="align-self-cente mx-2"></BsTiktok>
+                  Tik Tok
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="col-xs-12 col-md-3 col-lg-3">
@@ -61,7 +83,7 @@ export function Footer() {
           <div className="col mt-4">
             <p className="text-center">
               {" "}
-              &copy; 2022 Company, Inc. All rights reserved.
+              &copy; 2023 Sebastian Leal - Nicolas Torres. All rights reserved.
             </p>
           </div>
         </div>

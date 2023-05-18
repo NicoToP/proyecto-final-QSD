@@ -1,8 +1,8 @@
 export function AppointmentForm() {
   return (
     <>
-      <form className="container mx-auto p-5 bg-primary bg-opacity-10 rounded-4">
-        <h3 className="text-center mb-5">Agenda tu cita</h3>
+      <form className="container mx-auto p-5 rounded-4">
+        <h3 className="text-center mb-4">Agenda tu cita</h3>
         <div className="row">
           <div className="col">
             <div className="form-outline">
@@ -63,15 +63,8 @@ export function AppointmentForm() {
             </div>
           </div>
         </div>
-        {/* <div className="row">
-          <div className="col">
-            <button type="submit" className="btn btn-warning mb-3">
-              Confirm identity
-            </button>
-          </div>
-        </div> */}
         <div class="d-grid gap-2 col-2 my-4 mx-auto">
-          <button class="btn py-2 btn-outline-primary" type="button">
+          <button class="btn py-2 btn-outline-success" type="button">
             ¡Agendar!
           </button>
         </div>

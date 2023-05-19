@@ -6,7 +6,7 @@ export function ServicesPage() {
 
       <div className="row m-5 bg-secondary bg-opacity-10 rounded-4 p-3">
         <div className="col-md-7 col-sm-12 p-5">
-          <h1 className="text-center my-2">~Baños/Peluquería~</h1>
+          <h1 className="text-center my-2">~ Baños/Peluquería ~</h1>
           <p className="my-3">
             No solo mantengas a tus peluditos limpios con nosotros, sino que
             tambien aprovecha nuestro servicio de peluquería. Gatos y perros de
@@ -49,7 +49,7 @@ export function ServicesPage() {
           </div>
           <div className="text-center">
             <Link
-              href="#"
+              to="#"
               className="btn btn-primary text-wrap"
               role="button"
               data-bs-toggle="button"
@@ -64,6 +64,8 @@ export function ServicesPage() {
             className="img-fluid mx-auto d-block"
             src="/img/Bano.png"
             alt=""
+            height="450"
+            width="450"
           />
         </div>
       </div>
@@ -74,13 +76,13 @@ export function ServicesPage() {
             className="img-fluid mx-auto d-block "
             src="/img/Guarderia.png"
             alt=""
-            height={480}
-            width={480}
+            height="450"
+            width="450"
           />
         </div>
 
         <div className="col-md-7 col-sm-12 p-5">
-          <h1 className="text-center my-2">~Guardería~</h1>
+          <h1 className="text-center my-2">~ Guardería ~</h1>
           <p className="my-3">
             ¿No tienes donde dejar y quien cuide a tu peludito? No te preocupes.
             Nosotros prestamos el servicio de guardería para todos los perritos
@@ -123,7 +125,7 @@ export function ServicesPage() {
           </div>
           <div className="text-center">
             <Link
-              href="#"
+              to="#"
               className="btn btn-primary text-wrap"
               role="button"
               data-bs-toggle="button"

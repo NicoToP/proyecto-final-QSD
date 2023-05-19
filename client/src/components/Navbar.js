@@ -19,13 +19,17 @@ export function Navbar() {
       name: "Productos",
     },
     {
-      path: "/contact",
-      name: "Contactanos",
+      path: "/quienesomos",
+      name: "Quienes somos",
+    },
+    {
+      path: "/perfil",
+      name: "Perfil",
     },
   ];
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary bg-gradient mb-5">
+    <nav className="shadow navbar navbar-expand-lg navbar-dark bg-primary bg-gradient mb-5">
       <div className="container-fluid p-2">
         <Link className="navbar-brand fs-2 mx-4" to="/">
           <img
@@ -59,7 +63,7 @@ export function Navbar() {
             ))}
           </ul>
           <div className="ms-auto me-auto">
-            <Link to="/profile" className="btn btn-success">
+            <Link to="/profile" className="btn btn-outline-light">
               Registrate
             </Link>
           </div>

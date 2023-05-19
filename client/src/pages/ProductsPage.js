@@ -4,7 +4,7 @@ export function ProductsPage() {
     <h1 className="text-center m-4 p-2">¡Conoce nuestros productos!</h1>
       <div className="row justify-content-evenly m-4 p-2">
         <div className="col-sm-3">
-          <div className="card">
+          <div className="shadow card">
             <img
               src="https://acortar.link/nqhjGW"
               className="card-img-top"
@@ -21,7 +21,7 @@ export function ProductsPage() {
           </div>
         </div>
         <div className="col-sm-3">
-          <div className="card">
+          <div className="shadow card">
             <img
               src="https://acortar.link/5JtgRm"
               className="card-img-top"
@@ -38,7 +38,7 @@ export function ProductsPage() {
           </div>
         </div>
         <div className="col-sm-3">
-          <div className="card">
+          <div className="shadow card">
             <img
               src="https://acortar.link/AkBANK"
               className="card-img-top"
@@ -55,7 +55,7 @@ export function ProductsPage() {
           </div>
         </div>
         <div className="col-sm-3">
-          <div className="card">
+          <div className="shadow card">
             <img
               src="https://acortar.link/hALC9I"
               className="card-img-top"
@@ -74,7 +74,7 @@ export function ProductsPage() {
       </div>
       <div className="row justify-content-evenly m-4 p-2">
         <div className="col-sm-3">
-          <div className="card">
+          <div className="shadow card">
             <img
               src="https://acortar.link/qAYIPZ"
               className="card-img-top"
@@ -91,7 +91,7 @@ export function ProductsPage() {
           </div>
         </div>
         <div className="col-sm-3">
-          <div className="card">
+          <div className="shadow card">
             <img
               src="https://acortar.link/5JtgRm"
               className="card-img-top"
@@ -108,7 +108,7 @@ export function ProductsPage() {
           </div>
         </div>
         <div className="col-sm-3">
-          <div className="card">
+          <div className="shadow card">
             <img
               src="https://acortar.link/AkBANK"
               className="card-img-top"
@@ -125,7 +125,7 @@ export function ProductsPage() {
           </div>
         </div>
         <div className="col-sm-3">
-          <div className="card">
+          <div className="shadow card">
             <img
               src="https://acortar.link/hALC9I"
               className="card-img-top"

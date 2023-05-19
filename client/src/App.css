@@ -1,3 +1,6 @@
-.navbar{
-  background-color: #e3f2fd;
+footer a, ul {
+  text-decoration: none;
+  list-style: none;
+  padding: 0px;
+  text-decoration: none;
 }

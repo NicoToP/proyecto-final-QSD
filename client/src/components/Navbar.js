@@ -91,7 +91,7 @@ export function Navbar() {
 						))}
 					</ul>
 					<div className='ms-auto me-auto'>
-						<Link to='/perfil' className='btn btn-success'>
+						<Link to='/perfil' className='btn btn-outline-light'>
 							Perfil
 						</Link>
 					</div>

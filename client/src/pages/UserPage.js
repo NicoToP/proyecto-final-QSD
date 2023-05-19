@@ -2,6 +2,7 @@ import { Profile } from '../components/Profile';
 import { AppointmentForm } from '../components/AppointmentForm';
 import { RecordUser } from '../components/RecordUser';
 import { useState } from 'react';
+import { PetForm } from '../components/PetForm';
 
 export function UserPage() {
 	const [componentActive, setComponentActive] = useState('');
@@ -20,13 +21,14 @@ export function UserPage() {
 				</h2>
 			);
 	};
+
 	switch (componentActive) {
 		case 'info':
 			componentRendered = <Profile />;
 			break;
-		/* case "mascotas":
-      componentRendered = < />;
-      break; */
+		case 'mascotas':
+			componentRendered = <PetForm />;
+			break;
 		case 'historial':
 			componentRendered = <RecordUser />;
 			break;

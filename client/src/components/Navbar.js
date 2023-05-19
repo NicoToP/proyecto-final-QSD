@@ -1,8 +1,27 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
-export function Navbar() {
+const LoginButton = () => {
 	const { loginWithRedirect } = useAuth0();
+	return (
+		<button className='btn btn-success' onClick={() => loginWithRedirect()}>
+			Login
+		</button>
+	);
+};
+
+const LogoutButton = () => {
+	const { logout } = useAuth0();
+	return (
+		<button className='btn btn-danger' onClick={() => logout()}>
+			Logout
+		</button>
+	);
+};
+
+export function Navbar() {
+	const { isAuthenticated } = useAuth0();
+
 	const location = useLocation();
 
 	const menuData = [
@@ -71,14 +90,7 @@ export function Navbar() {
 							</li>
 						))}
 					</ul>
-					<div className='ms-auto me-auto'>
-						<button
-							className='btn btn-success'
-							onClick={() => loginWithRedirect()}
-						>
-							Login
-						</button>
-					</div>
+					<div className='ms-auto me-auto'></div>
 				</div>
 			</div>
 		</nav>

@@ -25,8 +25,8 @@ export function Navbar() {
       name: "Contactanos",
     },
     {
-      path: "/pets",
-      name: "Mascotas",
+      path: "/AboutUs",
+      name: "Quienes Somos",
     },
   ];
 

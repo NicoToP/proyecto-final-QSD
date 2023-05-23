@@ -1,17 +1,23 @@
 {
   "name": "proyecto-final-qsd",
+  "private": true,
   "version": "1.0.0",
   "description": "",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    
+  },
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write",
-    "lint": "eslint . --fix",
+    "build": "npm run build --workspaces=client",
+    "start": "npm run start --workspaces=server",
+    "lint": "eslint ./client ./server",
     "debug:server": "nodemon --inspect server --watch server",
-    "dev:client": "npm start --prefix client",
-    "dev:server": "nodemon server --watch server",
-    "install:client": "npm install --prefix client",
-    "build": "npm run build --prefix client",
-    "start": "node server"
+    "dev:client": "npm start --workspaces=client",
+    "dev:server": "nodemon server --watch server"
   },
   "repository": {
     "type": "git",
@@ -28,6 +34,7 @@
     "standard": "^17.0.0"
   },
   "eslintConfig": {
+    "ignorePatterns": "build",
     "extends": "./node_modules/standard/eslintrc.json"
   }
 }

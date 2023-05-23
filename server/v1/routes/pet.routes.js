@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from 'express'
 
 import {
   getAll,
@@ -10,29 +10,29 @@ import {
   getAppointment,
   createAppointment,
   updateAppointment,
-  removeAppointment,
-} from '../../controllers/pet.controller.js';
+  removeAppointment
+} from '../../controllers/pet.controller.js'
 
-const router = Router();
+const router = Router()
 
-router.get('/', getAll);
+router.get('/', getAll)
 
-router.get('/:id', getOneById);
+router.get('/:id', getOneById)
 
-router.post('/', createOne);
+router.post('/', createOne)
 
-router.put('/:id', updateOneById);
+router.put('/:id', updateOneById)
 
-router.delete('/:id', removeOneById);
+router.delete('/:id', removeOneById)
 
-router.get('/:petId/appointments', getAllAppointments);
+router.get('/:petId/appointments', getAllAppointments)
 
-router.get('/:petId/appointments/:appointmentId', getAppointment);
+router.get('/:petId/appointments/:appointmentId', getAppointment)
 
-router.post('/:petId/appointments', createAppointment);
+router.post('/:petId/appointments', createAppointment)
 
-router.put('/:petId/appointments/:appointmentId', updateAppointment);
+router.put('/:petId/appointments/:appointmentId', updateAppointment)
 
-router.delete('/:petId/appointments/:appointmentId', removeAppointment);
+router.delete('/:petId/appointments/:appointmentId', removeAppointment)
 
-export default router;
+export default router

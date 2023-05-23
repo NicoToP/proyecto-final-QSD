@@ -1,28 +1,28 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const appointmentSchema = new mongoose.Schema(
   {
     service: {
       type: String,
-      required: true,
+      required: true
     },
     date: {
       type: Date,
       required: true,
-      default: Date.now,
+      default: Date.now
     },
     description: {
-      type: String,
+      type: String
     },
     staff: {
       type: mongoose.ObjectId,
-      ref: 'Staff',
-    },
+      ref: 'Staff'
+    }
   },
   {
     timestamp: true,
-    versionKey: false,
+    versionKey: false
   }
-);
+)
 
-export default mongoose.model('Appointment', appointmentSchema);
+export default mongoose.model('Appointment', appointmentSchema)

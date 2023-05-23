@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from 'express'
 
 import {
   getAllAppointments,
@@ -9,27 +9,27 @@ import {
   getStaff,
   updateStaff,
   createStaff,
-  removeStaff,
-} from '../../controllers/appointment.controller.js';
+  removeStaff
+} from '../../controllers/appointment.controller.js'
 
-const router = Router();
+const router = Router()
 
-router.get('/', getAllAppointments);
+router.get('/', getAllAppointments)
 
-router.get('/:id', getAppointment);
+router.get('/:id', getAppointment)
 
-router.post('/', createAppointment);
+router.post('/', createAppointment)
 
-router.put('/:id', updateAppointment);
+router.put('/:id', updateAppointment)
 
-router.delete('/:id', removeAppointment);
+router.delete('/:id', removeAppointment)
 
-router.get('/:id/staff', getStaff);
+router.get('/:id/staff', getStaff)
 
-router.post('/:appointmentId/staffs', createStaff);
+router.post('/:appointmentId/staffs', createStaff)
 
-router.put('/:appointmentId/staffs/:staffId', updateStaff);
+router.put('/:appointmentId/staffs/:staffId', updateStaff)
 
-router.delete('/:appointmentId/staffs/:staffId', removeStaff);
+router.delete('/:appointmentId/staffs/:staffId', removeStaff)
 
-export default router;
+export default router

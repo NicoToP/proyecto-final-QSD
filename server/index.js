@@ -1,8 +1,8 @@
-import {app} from './app.js';
-import {connectDB} from './database/mongo.js';
-import {PORT} from './config.js';
+import { app } from './app.js'
+import { connectDB } from './database/mongo.js'
+import { PORT } from './config.js'
 
-connectDB();
+connectDB()
 app.listen(PORT, () => {
-  console.log(`Server on port ${PORT}`);
-});
+  console.log(`Server on port ${PORT}`)
+})

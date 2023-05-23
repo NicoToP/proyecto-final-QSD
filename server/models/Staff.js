@@ -1,42 +1,42 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const staffSchema = new mongoose.Schema(
   {
     name: {
       first: {
         type: String,
-        required: true,
+        required: true
       },
       last: {
         type: String,
-        required: true,
-      },
+        required: true
+      }
     },
     specialty: {
       type: String,
-      required: true,
+      required: true
     },
     professionalCard: {
       type: String,
-      required: true,
+      required: true
     },
     email: {
       type: String,
-      required: true,
+      required: true
     },
     phone: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   {
     timestamps: true,
-    versionKey: false,
+    versionKey: false
   }
-);
+)
 
 staffSchema.virtual('fullName').get(function () {
-  return this.name.first + ' ' + this.name.last;
-});
+  return this.name.first + ' ' + this.name.last
+})
 
-export default mongoose.model('Staff', staffSchema);
+export default mongoose.model('Staff', staffSchema)

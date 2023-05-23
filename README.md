@@ -4,11 +4,12 @@
 
 <!-- ToDo: Insertar imagen de la pagina desplegada -->
 
-## Descripción
+## Objetivo del proyecto
 <!-- ToDo: Mejorar la descripción -->
-Este proyecto es el desarrollo hecho por programadores en formación para el proyecto integrado realizado en el Bootcamp QSD-2023.
+El objetivo del proyecto que los desarrolladores [Sebastian Leal Sanchez](https://www.linkedin.com/in/sebastian-leal-sanchez/) y [Nicolas Torres](https://www.linkedin.com/in/nico-torrespa) es exponer, afianzar y mejorar sus habilidades en programación siguiendo con las mejores practicas. Todas adquiridas durante el Bootcamp Quiero Ser Digital realizado por [BIT](https://bit.institute/) y [KeyCode](https://www.keycode.com.co/) con el patrocinio de [Accenture](https://www.accenture.com/co-es) y la [Fundación Corona](https://www.fundacioncorona.org/)
 
-## Porque?
+
+## Objetivo de la aplicación
 
 Conectar una clínica veterinaria con los dueños de mascotas y sus necesidades.
 
@@ -18,12 +19,13 @@ Conectar una clínica veterinaria con los dueños de mascotas y sus necesidades.
 
 ## Tecnologías utilizadas
 
-- React
-- NodeJS y ExpressJS
-- MongoDB
-- Bootstrap 
-- Git/Github
-- Eslint y Husky
+- [React](https://es.react.dev/)
+- [NodeJS](https://nodejs.org/es) y [ExpressJS](https://expressjs.com/es/)
+- [MongoDB](https://www.mongodb.com/)
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Git/Github](https://github.com/)
+- [Eslint](https://eslint.org/) y [Husky](https://typicode.github.io/husky/)
 
 ## Cómo empezar
 
@@ -33,6 +35,12 @@ Conectar una clínica veterinaria con los dueños de mascotas y sus necesidades.
 
 * [Node.js v16 en adelante](https://nodejs.org/en/download/)
 
+### Se recomienda instalar estas extensiones en VS Code
+
+* ESLint
+* Error lent
+* Prettier
+
 ### instalación
 
 ```bash
@@ -41,17 +49,25 @@ cd proyecto-final-QSD
 npm install
 ```
 
-### Despliegue en desarrollo
+### Variables de entorno
+
+Crea un archivo `.env` en raíz y añade estas variables de entorno
+
+```
+MONGO_URI
+```
+
+### Despliegue para desarrollo
 
 El desarrollo se realiza en dos terminales, una para el frontend y otra para el backend
 
 ```bash
-# Terminal de servidor
+# Terminal para servidor
 npm run dev:server
 ```
 
 ```bash
-# Terminal de cliente
+# Terminal para cliente
 npm run dev:client
 ```
 

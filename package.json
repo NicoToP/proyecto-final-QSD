@@ -7,9 +7,7 @@
     "client",
     "server"
   ],
-  "engines": {
-    
-  },
+  "engines": {},
   "main": "index.js",
   "scripts": {
     "build": "npm run build --workspace=client",
@@ -17,7 +15,8 @@
     "lint": "eslint ./client ./server",
     "debug:server": "nodemon --inspect server --watch server",
     "dev:client": "npm start --workspace=client",
-    "dev:server": "nodemon server --watch server"
+    "dev:server": "nodemon server --watch server",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -31,6 +30,8 @@
   },
   "homepage": "https://github.com/Sebastian-Leal-S/proyecto-final-QSD#readme",
   "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "standard": "^17.0.0"
   },
   "eslintConfig": {

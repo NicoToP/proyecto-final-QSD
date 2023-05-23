@@ -12,11 +12,11 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "npm run build --workspaces=client",
-    "start": "npm run start --workspaces=server",
+    "build": "npm run build --workspace=client",
+    "start": "npm run start --workspace=server",
     "lint": "eslint ./client ./server",
     "debug:server": "nodemon --inspect server --watch server",
-    "dev:client": "npm start --workspaces=client",
+    "dev:client": "npm start --workspace=client",
     "dev:server": "nodemon server --watch server"
   },
   "repository": {

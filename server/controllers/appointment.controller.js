@@ -28,7 +28,7 @@ export const createAppointment = async (req, res) => {
       service,
       date,
       description,
-      staff
+      staff,
     })
     await newAppointment.save()
     return res.status(201).json(newAppointment)
@@ -97,7 +97,7 @@ export const createStaff = async (req, res) => {
       specialty,
       professionalCard,
       email,
-      phone
+      phone,
     })
     staff.appointment = appointment
 

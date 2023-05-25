@@ -24,8 +24,7 @@ export const getOneById = async (req, res) => {
 // se crea nuevo pet con los parametros
 export const createOne = async (req, res) => {
   try {
-    const { namePet, species, breed, weight, dateBirth, description } =
-      req.body
+    const { namePet, species, breed, weight, dateBirth, description } = req.body
 
     const newPet = new Pet({
       namePet,
@@ -33,7 +32,7 @@ export const createOne = async (req, res) => {
       breed,
       weight,
       dateBirth,
-      description
+      description,
     })
     await newPet.save()
     return res.status(201).json(newPet)
@@ -93,7 +92,9 @@ export const getAppointment = async (req, res) => {
     const appointment = pet.appointments.find(
       (appointment) => appointment._id === appointmentId
     )
-    if (!appointment) { return res.status(404).json({ error: 'appointment not found' }) }
+    if (!appointment) {
+      return res.status(404).json({ error: 'appointment not found' })
+    }
 
     return res.status(201).json(appointment)
   } catch (error) {
@@ -113,7 +114,7 @@ export const createAppointment = async (req, res) => {
       service,
       date,
       description,
-      staff
+      staff,
     })
 
     appointment.pet = pet
@@ -138,7 +139,9 @@ export const updateAppointment = async (req, res) => {
     const appointment = pet.appointments.find(
       (appointment) => appointment._id === appointmentId
     )
-    if (!appointment) { return res.status(404).json({ error: 'appointment not found' }) }
+    if (!appointment) {
+      return res.status(404).json({ error: 'appointment not found' })
+    }
 
     appointment.service = service || appointment.service
     appointment.date = date || appointment.date
@@ -163,7 +166,9 @@ export const removeAppointment = async (req, res) => {
     const appointment = pet.appointments.find(
       (appointment) => appointment._id === appointmentId
     )
-    if (!appointment) { return res.status(404).json({ error: 'appointment not found' }) }
+    if (!appointment) {
+      return res.status(404).json({ error: 'appointment not found' })
+    }
 
     await Appointment.deleteOne({ _id: appointment._id })
     pet.appointments.pull(appointment)

@@ -9,7 +9,7 @@ import {
   getStaff,
   updateStaff,
   createStaff,
-  removeStaff
+  removeStaff,
 } from '../../controllers/appointment.controller.js'
 
 const router = Router()

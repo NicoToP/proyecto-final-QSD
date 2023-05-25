@@ -1,5 +1,5 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import {
   HomePage,
   NotFoundPage,
@@ -9,12 +9,12 @@ import {
   AppointmentsPage,
   UserPage,
   OurInfo,
-} from "./pages/index";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
-import { Toaster } from "react-hot-toast";
-import { PetProvider } from "./context/petContext";
-import { AppointmentProvider } from "./context/AppointmentsContext";
+} from './pages/index'
+import { Navbar } from './components/Navbar'
+import { Footer } from './components/Footer'
+import { Toaster } from 'react-hot-toast'
+import { PetProvider } from './context/petContext'
+import { AppointmentProvider } from './context/AppointmentsContext'
 
 function App() {
   return (
@@ -22,17 +22,17 @@ function App() {
       <Navbar />
       <AppointmentProvider>
         <PetProvider>
-          <div className="container-fluid">
+          <div className='container-fluid'>
             <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/pets" element={<PetPage />} />
-              <Route path="/pets/:id" element={<PetPage />} />
-              <Route path="/appointments" element={<AppointmentsPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/products" element={<ProductsPage />} />
-              <Route path="/AboutUs" element={<OurInfo />} />
-              <Route path="/perfil" element={<UserPage />} />
-              <Route path="*" element={<NotFoundPage />} />
+              <Route path='/' element={<HomePage />} />
+              <Route path='/pets' element={<PetPage />} />
+              <Route path='/pets/:id' element={<PetPage />} />
+              <Route path='/appointments' element={<AppointmentsPage />} />
+              <Route path='/services' element={<ServicesPage />} />
+              <Route path='/products' element={<ProductsPage />} />
+              <Route path='/AboutUs' element={<OurInfo />} />
+              <Route path='/perfil' element={<UserPage />} />
+              <Route path='*' element={<NotFoundPage />} />
             </Routes>
             <Toaster />
           </div>
@@ -40,7 +40,7 @@ function App() {
       </AppointmentProvider>
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -10,7 +10,7 @@ import {
   getAppointment,
   createAppointment,
   updateAppointment,
-  removeAppointment
+  removeAppointment,
 } from '../../controllers/pet.controller.js'
 
 const router = Router()

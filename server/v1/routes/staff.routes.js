@@ -5,7 +5,7 @@ import {
   getStaff,
   createStaff,
   updateStaff,
-  removeStaff
+  removeStaff,
 } from '../../controllers/staff.controller.js'
 
 const router = Router()

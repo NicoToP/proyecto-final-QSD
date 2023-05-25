@@ -7,10 +7,6 @@
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sebastian-Leal-S/proyecto-final-QSD.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,7 +14,6 @@
     "nodemon": "^2.0.22"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.1.1",

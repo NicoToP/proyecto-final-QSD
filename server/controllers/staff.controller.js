@@ -30,7 +30,7 @@ export const createStaff = async (req, res) => {
       specialty,
       professionalCard,
       email,
-      phone
+      phone,
     })
     await newStaff.save()
     return res.status(201).json(newStaff)

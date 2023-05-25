@@ -4,34 +4,34 @@ const petSchema = new mongoose.Schema(
   {
     namePet: {
       type: String,
-      required: true
+      required: true,
     },
     species: {
       type: String,
-      required: true
+      required: true,
     },
     breed: {
-      type: String
+      type: String,
     },
     weight: {
-      type: Number
+      type: Number,
     },
     dateBirth: {
-      type: String
+      type: String,
     },
     description: {
-      type: String
+      type: String,
     },
     appointments: [
       {
         type: mongoose.ObjectId,
-        ref: 'Appointments'
-      }
-    ]
+        ref: 'Appointments',
+      },
+    ],
   },
   {
     timestamps: true,
-    versionKey: false
+    versionKey: false,
   }
 )
 

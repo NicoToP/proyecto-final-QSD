@@ -5,31 +5,31 @@ const ownerSchema = new mongoose.Schema(
     name: {
       first: {
         type: String,
-        required: true
+        required: true,
       },
       last: {
         type: String,
-        required: true
-      }
+        required: true,
+      },
     },
     email: {
       type: String,
-      required: true
+      required: true,
     },
     phone: {
       type: String,
-      require: true
+      require: true,
     },
     pets: [
       {
         type: mongoose.ObjectId,
-        ref: 'Pet'
-      }
-    ]
+        ref: 'Pet',
+      },
+    ],
   },
   {
     timestamps: true,
-    versionKey: false
+    versionKey: false,
   }
 )
 

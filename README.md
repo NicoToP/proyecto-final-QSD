@@ -5,9 +5,10 @@
 <!-- ToDo: Insertar imagen de la pagina desplegada -->
 
 ## Objetivo del proyecto
-<!-- ToDo: Mejorar la descripción -->
-El objetivo del proyecto que los desarrolladores [Sebastian Leal Sanchez](https://www.linkedin.com/in/sebastian-leal-sanchez/) y [Nicolas Torres](https://www.linkedin.com/in/nico-torrespa) es exponer, afianzar y mejorar sus habilidades en programación siguiendo con las mejores practicas. Todas adquiridas durante el Bootcamp Quiero Ser Digital realizado por [BIT](https://bit.institute/) y [KeyCode](https://www.keycode.com.co/) con el patrocinio de [Accenture](https://www.accenture.com/co-es) y la [Fundación Corona](https://www.fundacioncorona.org/)
 
+<!-- ToDo: Mejorar la descripción -->
+
+El objetivo del proyecto que los desarrolladores [Sebastian Leal Sanchez](https://www.linkedin.com/in/sebastian-leal-sanchez/) y [Nicolas Torres](https://www.linkedin.com/in/nico-torrespa) es exponer, afianzar y mejorar sus habilidades en programación siguiendo con las mejores practicas. Todas adquiridas durante el Bootcamp Quiero Ser Digital realizado por [BIT](https://bit.institute/) y [KeyCode](https://www.keycode.com.co/) con el patrocinio de [Accenture](https://www.accenture.com/co-es) y la [Fundación Corona](https://www.fundacioncorona.org/)
 
 ## Objetivo de la aplicación
 
@@ -33,13 +34,13 @@ Conectar una clínica veterinaria con los dueños de mascotas y sus necesidades.
 
 :bulb: Antes de comenzar, asegúrate de tener instalado:
 
-* [Node.js v16 en adelante](https://nodejs.org/en/download/)
+- [Node.js v16 en adelante](https://nodejs.org/en/download/)
 
 ### Se recomienda instalar estas extensiones en VS Code
 
-* ESLint
-* Error lent
-* Prettier
+- ESLint
+- Error lent
+- Prettier
 
 ### instalación
 

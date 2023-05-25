@@ -10,7 +10,7 @@ import {
   getPet,
   createPet,
   updatePet,
-  removePet
+  removePet,
 } from '../../controllers/owner.controller.js'
 
 const router = Router()

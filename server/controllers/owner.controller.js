@@ -27,7 +27,7 @@ export const createOwner = async (req, res) => {
     const newOwner = new Owner({
       name,
       email,
-      phone
+      phone,
     })
     await newOwner.save()
     return res.status(201).json(newOwner)
@@ -46,7 +46,7 @@ export const updateOwner = async (req, res) => {
       {
         name,
         email,
-        phone
+        phone,
       },
       { new: true }
     )
@@ -112,7 +112,7 @@ export const createPet = async (req, res) => {
       breed,
       weight,
       dateBirth,
-      description
+      description,
     })
 
     pet.owner = owner

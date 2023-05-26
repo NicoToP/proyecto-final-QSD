@@ -10,6 +10,18 @@
 
 El objetivo del proyecto que los desarrolladores [Sebastian Leal Sanchez](https://www.linkedin.com/in/sebastian-leal-sanchez/) y [Nicolas Torres](https://www.linkedin.com/in/nico-torrespa) es exponer, afianzar y mejorar sus habilidades en programación siguiendo con las mejores practicas. Todas adquiridas durante el Bootcamp Quiero Ser Digital realizado por [BIT](https://bit.institute/) y [KeyCode](https://www.keycode.com.co/) con el patrocinio de [Accenture](https://www.accenture.com/co-es) y la [Fundación Corona](https://www.fundacioncorona.org/)
 
+### iniciativa de
+
+* Fondo Quiero Ser Digital
+* Global Opportunity Youth Network: Bogota
+* Fundación Corona
+* Inversor
+
+### Operador por
+
+* BIT
+* Key Code
+
 ## Objetivo de la aplicación
 
 Conectar una clínica veterinaria con los dueños de mascotas y sus necesidades.

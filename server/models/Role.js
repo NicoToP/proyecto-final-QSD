@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-export const ROLES = ['user', 'admin', 'moderator']
+export const ROLES = ['user', 'moderator', 'admin']
 
 const roleSchema = new mongoose.Schema({ name: String }, { versionKey: false })
 

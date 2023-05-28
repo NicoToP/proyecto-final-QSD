@@ -2,9 +2,20 @@ POST http://localhost:4000/api/v1/api/v1/auth/signin
 Content-Type: application/json
 
 {
-  
+  "username": " ",
+  "email": "",
+  "password": "",
+  "roles": []
 }
 
 ###
 
-POST http://localhost:4000/api/v1/
+POST http://localhost:4000/api/v1/auth/signup
+Content-Type: application/json
+
+{
+  "username": "Sebastian",
+  "email": "",
+  "password": "",
+  "roles": []
+}

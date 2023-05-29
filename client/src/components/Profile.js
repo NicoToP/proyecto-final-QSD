@@ -1,45 +1,33 @@
-export function Profile() {
+import React from 'react'
+import AuthService from '../services/auth.service'
+
+const Profile = () => {
+  const currentUser = AuthService.getCurrentUser()
+
   return (
-    <>
-      <div className='row justify-content-center'>
-        <h3 className='text-center mb-3'>Mis datos</h3>
-        <div className='col-6 '>
-          <form className='container'>
-            <input
-              type='text'
-              className='form-control my-3'
-              placeholder='Nombre'
-            />
-            <input
-              type='text'
-              className='form-control my-3'
-              placeholder='Correo'
-            />
-            <input
-              type='password'
-              className='form-control my-3'
-              placeholder='clave'
-            />
-            <input
-              type='text'
-              className='form-control my-3'
-              placeholder='dirección'
-            />
-          </form>
-        </div>
-      </div>
-      <div className='row justify-content-center'>
-        <div className='col-2'>
-          <button type='button' class='btn btn-outline-warning'>
-            Editar
-          </button>
-        </div>
-        <div className='col-2'>
-          <button type='button' class='btn btn-outline-success'>
-            Guardar
-          </button>
-        </div>
-      </div>
-    </>
+    <div className='container'>
+      <header className='jumbotron'>
+        <h3>
+          <strong>{currentUser.username}</strong> Profile
+        </h3>
+      </header>
+      <p>
+        <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{' '}
+        {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
+      </p>
+      <p>
+        <strong>Id:</strong> {currentUser.id}
+      </p>
+      <p>
+        <strong>Email:</strong> {currentUser.email}
+      </p>
+      <strong>Authorities:</strong>
+      <ul>
+        {currentUser.roles &&
+          currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
+      </ul>
+    </div>
   )
 }
+
+export default Profile

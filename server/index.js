@@ -1,6 +1,6 @@
 import { app } from './app.js'
 import { connectDB } from './database/mongo.js'
-import { PORT } from './config.js'
+import { PORT } from './config/db.config.js'
 import './libs/initialSetup.js'
 
 connectDB()

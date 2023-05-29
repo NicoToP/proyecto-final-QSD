@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import User from '../models/User.js'
 import Role from '../models/Role.js'
-import { SECRET } from '../config.js'
+import { SECRET } from '../config/auth.config.js'
 
 export const signupHandler = async (req, res) => {
   try {

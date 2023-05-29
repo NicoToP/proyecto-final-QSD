@@ -1,4 +1,4 @@
-import { Profile } from '../components/Profile'
+import { Profile } from '../components/ProfileOld'
 import { AppointmentForm } from '../components/AppointmentForm'
 import { RecordUser } from '../components/RecordUser'
 import { useState } from 'react'

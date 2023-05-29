@@ -49,6 +49,8 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "helmet": "^7.0.0",
-    "jsonwebtoken": "^9.0.0"
+    "jsonwebtoken": "^9.0.0",
+    "react-validation": "^3.0.7",
+    "validator": "^13.9.0"
   }
 }

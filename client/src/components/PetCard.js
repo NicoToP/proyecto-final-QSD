@@ -9,7 +9,7 @@ export function PetCard({ pet }) {
   const handleDelete = (id) => {
     toast((t) => (
       <div>
-        <p>Estas seguro lo quiers eliminar?</p>
+        <p>Estas seguro lo quieres eliminar?</p>
         <div className='d-flex align-items-center justify-content-center'>
           <button
             className='btn btn-danger px-3 py-2 mx-2'
@@ -34,7 +34,7 @@ export function PetCard({ pet }) {
   }
 
   return (
-    <div className='d-flex flex-column justify-content-center aling-item-center'>
+    <div className='d-flex flex-column justify-content-center align-item-center'>
       <div
         className='card card-hover'
         onClick={() => navigate(`/pets/${pet._id}`)}

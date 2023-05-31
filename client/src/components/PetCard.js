@@ -42,7 +42,7 @@ export function PetCard({ pet }) {
           onClick={() => navigate(`/pets/${pet._id}`)}
         >
           <div className='card-header d-flex bg-primary bg-opacity-25'>
-          {/* Botón para editar */}
+            {/* Botón para editar */}
             <button
               className='btn btn-outline-primary btn-sm'
               onClick={(e) => {
@@ -71,7 +71,9 @@ export function PetCard({ pet }) {
             <h5 className='card-title text-center'>{pet.species}</h5>
             <p className='card-text text-center'>{pet.description}</p>
           </div>
-          <div class="card-footer text-center border-primary"><strong>Peso {pet.weight}Kg</strong></div>
+          <div class='card-footer text-center border-primary'>
+            <strong>Peso {pet.weight}Kg</strong>
+          </div>
         </div>
       </div>
     </div>

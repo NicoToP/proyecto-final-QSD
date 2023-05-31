@@ -42,13 +42,15 @@
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8"
   },
-  "eslintConfig": {
-    "ignorePatterns": "build",
-    "extends": "./node_modules/standard/eslintrc.json"
-  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "helmet": "^7.0.0",
-    "jsonwebtoken": "^9.0.0"
+    "jsonwebtoken": "^9.0.0",
+    "react-validation": "^3.0.7",
+    "validator": "^13.9.0"
+  },
+  "eslintConfig": {
+    "ignorePatterns": "build",
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }

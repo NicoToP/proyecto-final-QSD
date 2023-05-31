@@ -1,16 +1,9 @@
-import React from 'react'
-import AuthService from '../services/auth.service'
-
-const Profile = () => {
-  const currentUser = AuthService.getCurrentUser()
-
+export function Profile() {
   return (
     <>
-      <div className='container-fluid d-flex justify-content-center mb-2'>
-        <h3 className='bg-primary bg-opacity-25 p-3 rounded-3'>Mis datos</h3>
-      </div>
       <div className='row justify-content-center'>
-        <div className='col-6'>
+        <h3 className='text-center mb-3'>Mis datos</h3>
+        <div className='col-6 '>
           <form className='container'>
             <input
               type='text'
@@ -50,5 +43,3 @@ const Profile = () => {
     </>
   )
 }
-
-export default Profile

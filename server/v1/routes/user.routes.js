@@ -1,10 +1,10 @@
 import { Router } from 'express'
-import { createUser } from '../controllers/user.controller.js'
-import { isAdmin, verifyToken } from '../middlewares/authJwt.js'
-import { checkExistingUser } from '../middlewares/verifySignup.js'
+import { getUser, createUser } from '../../controllers/user.controllers.js'
+import { isAdmin, verifyToken } from '../../middlewares/authJwt.js'
+const userRoutes = Router()
 
-const router = Router()
+userRoutes.get('/', getUser)
 
-router.post('/', [verifyToken, isAdmin, checkExistingUser], createUser)
+userRoutes.post('/', [verifyToken, isAdmin], createUser)
 
-export default router
+export default userRoutes

@@ -1,7 +1,28 @@
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+
+import AuthService from '../services/auth.service'
 
 export function Navbar() {
   const location = useLocation()
+
+  const [showModeratorBoard, setShowModeratorBoard] = useState(false)
+  const [showAdminBoard, setShowAdminBoard] = useState(false)
+  const [currentUser, setCurrentUser] = useState(undefined)
+
+  useEffect(() => {
+    const user = AuthService.getCurrentUser()
+
+    if (user) {
+      setCurrentUser(user)
+      setShowModeratorBoard(user.roles.includes('ROLE_MODERATOR'))
+      setShowAdminBoard(user.roles.includes('ROLE_ADMIN'))
+    }
+  }, [])
+
+  const logOut = () => {
+    AuthService.logout()
+  }
 
   const menuData = [
     {
@@ -51,6 +72,29 @@ export function Navbar() {
           <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse' id='navbarNav'>
+          {showModeratorBoard && (
+            <li className='nav-item'>
+              <Link to={'/mod'} className='nav-link'>
+                Moderator Board
+              </Link>
+            </li>
+          )}
+
+          {showAdminBoard && (
+            <li className='nav-item'>
+              <Link to={'/admin'} className='nav-link'>
+                Admin Board
+              </Link>
+            </li>
+          )}
+
+          {currentUser && (
+            <li className='nav-item'>
+              <Link to={'/user'} className='nav-link'>
+                User
+              </Link>
+            </li>
+          )}
           <ul className='navbar-nav ms-auto'>
             {menuData.map((item) => (
               <li
@@ -66,9 +110,40 @@ export function Navbar() {
             ))}
           </ul>
           <div className='ms-auto me-auto'>
-            <Link to='/perfil' className='btn btn-outline-light'>
-              Perfil
-            </Link>
+            {currentUser ? (
+              <div className='navbar-nav ml-auto'>
+                <li className='nav-item'>
+                  <Link to={'/profile'} className='nav-link'>
+                    {currentUser.username}
+                  </Link>
+                </li>
+                <li className='nav-item'>
+                  <a href='/login' className='nav-link' onClick={logOut}>
+                    LogOut
+                  </a>
+                </li>
+              </div>
+            ) : (
+              <div className='navbar-nav ml-auto'>
+                <li className='nav-item'>
+                  <Link
+                    to={'/login'}
+                    className='nav-link btn btn-outline-light'
+                  >
+                    Login
+                  </Link>
+                </li>
+
+                <li className='nav-item'>
+                  <Link
+                    to={'/register'}
+                    className='nav-link btn btn-outline-light'
+                  >
+                    Sign Up
+                  </Link>
+                </li>
+              </div>
+            )}
           </div>
         </div>
       </div>

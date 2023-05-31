@@ -24,10 +24,6 @@ export function Navbar() {
       path: '/contact',
       name: 'Contactanos',
     },
-    {
-      path: '/AboutUs',
-      name: 'Quienes Somos',
-    },
   ]
 
   return (

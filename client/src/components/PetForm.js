@@ -27,34 +27,35 @@ export function PetForm() {
   }, [params.id])
 
   return (
-    <div className='d-flex justify-content-center align-items-center'>
-      <div className='shadow p-3 bg-info rounded'>
-        <header className='d-flex justify-content-between align-items-center py-4 text-white'>
-          <h3>New Pet</h3>
-          {/* <Link to="/">Regresar</Link> */}
-        </header>
-        <Formik
-          initialValues={pet}
-          validationSchema={Yup.object({
-            namePet: Yup.string().required('El Nombre es requerido'),
-            species: Yup.string().required('La especie es requerida'),
-            breed: Yup.string().required('La raza es requerida'),
-            weight: Yup.string().required('Peso requerido'),
-            dateBirth: Yup.date().required('Fecha requerida'),
-            description: Yup.string(),
-          })}
-          onSubmit={async (values, actions) => {
-            if (params.id) {
-              await updatePet(params.id, values)
-            } else {
-              await createPet(values)
-            }
-          }}
-          enableReinitialize
-        >
-          {({ handleSubmit }) => (
-            <Form onSubmit={handleSubmit}>
-              <div className='my-3'>
+    <>
+      <Formik
+        initialValues={pet}
+        validationSchema={Yup.object({
+          namePet: Yup.string().required('El Nombre es requerido'),
+          species: Yup.string().required('La especie es requerida'),
+          breed: Yup.string().required('La raza es requerida'),
+          weight: Yup.string().required('Peso requerido'),
+          dateBirth: Yup.date().required('Fecha requerida'),
+          description: Yup.string(),
+        })}
+        onSubmit={async (values, actions) => {
+          if (params.id) {
+            await updatePet(params.id, values)
+          } else {
+            await createPet(values)
+          }
+        }}
+        enableReinitialize
+      >
+        {({ handleSubmit }) => (
+          <Form onSubmit={handleSubmit}>
+            <div className='container-fluid d-flex justify-content-center mb-3'>
+              <h3 className='bg-primary bg-opacity-25 p-3 rounded-3'>
+                Nueva Mascota
+              </h3>
+            </div>
+            <div className='row justify-content-center'>
+              <div className='col-5'>
                 <Field
                   name='namePet'
                   type='text'
@@ -70,8 +71,7 @@ export function PetForm() {
                   id='namePet'
                 />
               </div>
-
-              <div className='my-3'>
+              <div className='col-5'>
                 <Field
                   name='species'
                   type='species'
@@ -86,7 +86,9 @@ export function PetForm() {
                   id='namePet'
                 />
               </div>
-              <div className='my-3'>
+            </div>
+            <div className='row justify-content-center my-3'>
+              <div className='col-5'>
                 <Field
                   name='breed'
                   type='breed'
@@ -101,7 +103,7 @@ export function PetForm() {
                   id='namePet'
                 />
               </div>
-              <div className='my-3'>
+              <div className='col-5'>
                 <Field
                   name='weight'
                   type='number'
@@ -116,7 +118,9 @@ export function PetForm() {
                   id='namePet'
                 />
               </div>
-              <div className='my-3'>
+            </div>
+            <div className='row justify-content-center my-3'>
+              <div className='col-5'>
                 <Field
                   name='dateBirth'
                   type='date'
@@ -131,7 +135,7 @@ export function PetForm() {
                   id='namePet'
                 />
               </div>
-              <div className='my-3'>
+              <div className='col-5'>
                 <Field
                   name='description'
                   component='textarea'
@@ -145,15 +149,15 @@ export function PetForm() {
                   id='namePet'
                 />
               </div>
-              <div className='d-grid gap-2'>
-                <button type='submit' className='btn btn-primary'>
-                  Guardar
-                </button>
-              </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
-    </div>
+            </div>
+            <div className='d-grid gap-2 col-2 my-4 mx-auto'>
+              <button type='submit' className='btn py-2 btn-outline-success'>
+                Registrar
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
+    </>
   )
 }

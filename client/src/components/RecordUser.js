@@ -13,9 +13,9 @@ export function RecordUser() {
   const mensaje = () => {
     if (tableActive === '')
       return (
-        <h5 className='bg-primary bg-opacity-25 p-3 rounded-3'>
+        <h3 className='bg-primary bg-opacity-25 p-3 rounded-3'>
           ¿Cuál historial deseas ver?
-        </h5>
+        </h3>
       )
   }
 

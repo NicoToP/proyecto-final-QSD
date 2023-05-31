@@ -4,7 +4,7 @@ import { BsFacebook, BsTiktok, BsInstagram } from 'react-icons/bs'
 export function Footer() {
   return (
     <>
-      <footer className='container-fluid'>
+      <footer className='footer container-fluid'>
         <div className='row text-white bg-primary bg-gradient mt-5 pt-5 pb-3 px-5'>
           <div className='col-xs-12 col-md-3 col-lg-3'>
             <div className='container-fluid d-flex align-items-center'>
@@ -49,7 +49,7 @@ export function Footer() {
                   target='_blank'
                   className='text-light'
                 >
-                  <BsFacebook className='align-self-cente mx-2'></BsFacebook>
+                  <BsFacebook className='align-self-center mx-2'></BsFacebook>
                   Facebook
                 </Link>
               </li>
@@ -59,7 +59,7 @@ export function Footer() {
                   target='_blank'
                   className='text-light'
                 >
-                  <BsInstagram className='align-self-cente mx-2'></BsInstagram>
+                  <BsInstagram className='align-self-center mx-2'></BsInstagram>
                   Instagram
                 </Link>
               </li>
@@ -69,7 +69,7 @@ export function Footer() {
                   target='_blank'
                   className='text-light'
                 >
-                  <BsTiktok className='align-self-cente mx-2'></BsTiktok>
+                  <BsTiktok className='align-self-center mx-2'></BsTiktok>
                   Tik Tok
                 </Link>
               </li>

@@ -53,11 +53,11 @@ export function UserPage() {
       component: 'mascotasFormu',
     },
     {
-      title: 'ver mascotas',
+      title: 'Ver mascotas',
       component: 'mascotasListado',
     },
     {
-      title: 'historal',
+      title: 'Historial',
       component: 'historial',
     },
     {
@@ -69,10 +69,10 @@ export function UserPage() {
   return (
     <>
       <div className='row'>
-        <div className='col-2 align-self-center mx-auto bg-secondary bg-opacity-10 rounded-3 p-4'>
-          <p className='fs-5 text-center fw-bold bg-primary rounded-3 p-2 bg-opacity-25'>
+        <div className='col-sm-2 col-md-2 col-xl-2 align-self-center mx-auto bg-secondary bg-opacity-10 rounded-3 p-4'>
+          <h4 className='fs-5 text-center bg-primary rounded-3 p-2 bg-opacity-25'>
             ¿Qué deseas hacer?
-          </p>
+          </h4>
           <nav className='nav flex-column justify-content-around'>
             {dataButton.map((button) => (
               <button
@@ -86,7 +86,7 @@ export function UserPage() {
             ))}
           </nav>
         </div>
-        <div className='col-8 mx-auto bg-secondary bg-opacity-10 rounded-3 p-4'>
+        <div className='col-sm-8 col-md-8 col-xl-8 mx-auto bg-secondary bg-opacity-10 rounded-3 p-4 my-4'>
           {mensaje()}
           {componentRendered}
         </div>

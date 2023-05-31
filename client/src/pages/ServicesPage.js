@@ -59,9 +59,9 @@ export function ServicesPage() {
           </div>
         </div>
 
-        <div className='col-md-5 col-sm-12'>
+        <div className='col-md-5 col-sm-12 align-self-center'>
           <img
-            className='img-fluid mx-auto d-block'
+            className='img-fluid mx-auto d-block '
             src='/img/Bano.png'
             alt=''
             height='450'

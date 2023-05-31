@@ -1,68 +1,70 @@
-import jwt from 'jsonwebtoken'
 import User from '../models/User.js'
 import Role from '../models/Role.js'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 import { SECRET } from '../config/auth.config.js'
 
-export const signupHandler = async (req, res) => {
+export const registerHandler = async (req, res) => {
   try {
-    const { username, email, password, roles } = req.body
+    const { username, email, password } = req.body
 
-    // Creating a new User Object
+    const passwordHash = await bcrypt.hash(password, 8)
+
     const newUser = new User({
       username,
       email,
-      password,
+      passwordHash,
     })
 
-    // checking for roles
-    if (roles) {
-      const foundRoles = await Role.find({ name: { $in: roles } })
-      newUser.roles = foundRoles.map((role) => role._id)
-    } else {
-      const role = await Role.findOne({ name: 'user' })
-      newUser.roles = [role._id]
-    }
+    const role = await Role.findOne({ name: 'user' })
+    newUser.roles = [role._id]
 
-    // Saving the User Object in Mongodb
     const savedUser = await newUser.save()
 
-    // Create a token
     const token = jwt.sign({ id: savedUser._id }, SECRET, {
-      expiresIn: 86400, // 24 hours
+      expiresIn: 60 * 60 * 24 * 7, // 7 days
     })
 
-    return res.status(200).json({ token })
+    return res.status(201).json({ token })
   } catch (error) {
+    console.error(error)
     return res.status(500).json(error.message)
   }
 }
 
-export const signinHandler = async (req, res) => {
+export const loginHandler = async (req, res) => {
   try {
-    // Request body email can be an email or username
-    const userFound = await User.findOne({ email: req.body.email }).populate(
-      'roles'
-    )
+    const { email, password } = req.body
 
-    if (!userFound) return res.status(400).json({ message: 'User Not Found' })
+    const user = await User.findOne({ email }).populate('roles')
 
-    const matchPassword = await User.comparePassword(
-      req.body.password,
-      userFound.password
-    )
+    const passwordCorrect =
+      user === null ? false : await bcrypt.compare(password, user.passwordHash)
 
-    if (!matchPassword)
-      return res.status(401).json({
-        token: null,
-        message: 'Invalid Password',
-      })
+    if (!(user && passwordCorrect)) {
+      res.status(401).json({ error: 'invalid email or password' })
+    }
 
-    const token = jwt.sign({ id: userFound._id }, SECRET, {
-      expiresIn: 86400, // 24 hours
+    const token = jwt.sign({ id: user._id }, SECRET, {
+      expiresIn: 60 * 60 * 24 * 7, // 7 days
     })
 
-    res.json({ token })
+    const authorities = []
+
+    for (let i = 0; i < user.roles.length; i++) {
+      authorities.push('ROLE_' + user.roles[i].name.toUpperCase())
+    }
+
+    res.status(200).send({
+      id: user._id,
+      username: user.username,
+      email: user.email,
+      roles: user.roles,
+      authorities,
+      accessToken: token,
+    })
   } catch (error) {
-    console.log(error)
+    console.error(error)
+    return res.status(500).json(error.message)
   }
 }

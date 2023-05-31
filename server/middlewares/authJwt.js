@@ -6,41 +6,57 @@ import Role from '../models/Role.js'
 export const verifyToken = async (req, res, next) => {
   const token = req.headers['x-access-token']
 
-  if (!token) return res.status(403).json({ message: 'No token provided' })
-
-  try {
-    const decoded = jwt.verify(token, SECRET)
-    req.userId = decoded.id
-
-    const user = await User.findById(req.userId, { password: 0 })
-    if (!user) return res.status(404).json({ message: 'No user found' })
-
-    next()
-  } catch (error) {
-    return res.status(401).json({ message: 'Unauthorized!' })
+  if (!token) {
+    return res.status(403).send({ message: 'No token provided!' })
   }
+
+  jwt.verify(token, SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).send({ message: 'Unauthorized!' })
+    }
+    req.userId = decoded.id
+    next()
+  })
 }
 
 export const isModerator = async (req, res, next) => {
-  try {
-    const user = await User.findById(req.userId)
-    const roles = await Role.find({ _id: { $in: user.roles } })
-    for (let i = 0; i < roles.length; i++) {
-      if (roles[i].name === 'moderator') {
-        next()
-        return
-      }
+  User.findById(req.userId).exec((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err })
+      return
     }
-    return res.status(403).json({ message: 'Require Moderator Role!' })
-  } catch (error) {
-    return res.status(500).send({ message: error })
-  }
+
+    Role.find(
+      {
+        _id: { $in: user.roles },
+      },
+      (err, roles) => {
+        if (err) {
+          res.status(500).send({ message: err })
+          return
+        }
+
+        for (let i = 0; i < roles.length; i++) {
+          if (roles[i].name === 'moderator') {
+            next()
+            return
+          }
+        }
+
+        return res.status(403).send({ message: 'Require Moderator Role!' })
+      }
+    )
+  })
 }
 
 export const isAdmin = async (req, res, next) => {
   try {
-    const user = await User.findById(req.userId)
+    const { email } = req.body
+
+    const user = await User.findOne({ email })
     const roles = await Role.find({ _id: { $in: user.roles } })
+
+    if (!user) return
 
     for (let i = 0; i < roles.length; i++) {
       if (roles[i].name === 'admin') {
@@ -48,10 +64,9 @@ export const isAdmin = async (req, res, next) => {
         return
       }
     }
-
-    return res.status(403).json({ message: 'Require Admin Role!' })
-  } catch (error) {
-    console.log(error)
-    return res.status(500).send({ message: error })
+    res.status(403).send({ message: 'Require Admin Role!' })
+    return
+  } catch (err) {
+    return res.status(500).send({ message: err })
   }
 }

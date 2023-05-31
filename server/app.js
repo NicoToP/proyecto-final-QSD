@@ -9,7 +9,7 @@ import ownerRoutes from './v1/routes/owner.routes.js'
 import petRoutes from './v1/routes/pet.routes.js'
 import appointmentRoutes from './v1/routes/appointment.routes.js'
 import staffRoutes from './v1/routes/staff.routes.js'
-import auth from './v1/routes/auth.routes.js'
+import authRoutes from './v1/routes/auth.routes.js'
 import userRoutes from './v1/routes/user.routes.js'
 
 const app = express()
@@ -26,8 +26,8 @@ app.use('/api/v1/owners', ownerRoutes)
 app.use('/api/v1/pets', petRoutes)
 app.use('/api/v1/appointments', appointmentRoutes)
 app.use('/api/v1/staffs', staffRoutes)
-app.use('/api/v1/auth', auth)
-app.use('/api/v1/test', userRoutes)
+app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/auth', authRoutes)
 
 // static files
 app.use(express.static(path.join(__dirname, '../client/build')))

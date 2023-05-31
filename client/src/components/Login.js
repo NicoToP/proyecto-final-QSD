@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Form from 'react-validation/build/form'
+/* import Form from 'react-validation/build/form'
 import Input from 'react-validation/build/input'
-import CheckButton from 'react-validation/build/button'
+import CheckButton from 'react-validation/build/button' */
 
 import AuthService from '../services/auth.service'
 
@@ -77,7 +77,7 @@ const Login = () => {
           className='profile-img-card'
         />
 
-        <Form onSubmit={handleLogin} ref={form}>
+        <form onSubmit={handleLogin} ref={form}>
           <div className='form-group'>
             <label htmlFor='username'>Username</label>
             <input
@@ -92,7 +92,7 @@ const Login = () => {
 
           <div className='form-group'>
             <label htmlFor='password'>Password</label>
-            <Input
+            <input
               type='password'
               className='form-control'
               name='password'
@@ -118,8 +118,8 @@ const Login = () => {
               </div>
             </div>
           )}
-          <CheckButton style={{ display: 'none' }} ref={checkBtn} />
-        </Form>
+          <button style={{ display: 'none' }} ref={checkBtn} />
+        </form>
       </div>
     </div>
   )

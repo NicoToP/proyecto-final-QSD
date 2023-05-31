@@ -8,7 +8,6 @@ import {
   ProductsPage,
   AppointmentsPage,
   UserPage,
-  OurInfo,
 } from './pages/index'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
@@ -30,7 +29,6 @@ function App() {
               <Route path='/appointments' element={<AppointmentsPage />} />
               <Route path='/services' element={<ServicesPage />} />
               <Route path='/products' element={<ProductsPage />} />
-              <Route path='/AboutUs' element={<OurInfo />} />
               <Route path='/perfil' element={<UserPage />} />
               <Route path='*' element={<NotFoundPage />} />
             </Routes>

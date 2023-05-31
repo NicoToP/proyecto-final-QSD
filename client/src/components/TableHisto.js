@@ -1,7 +1,7 @@
 export function TableHisto() {
   return (
     <>
-      <table className='table table-striped table-bordered'>
+      <table className='table table-striped table-bordered mt-2'>
         <thead>
           <tr>
             <th scope='col'>Fecha</th>

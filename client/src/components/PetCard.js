@@ -43,7 +43,7 @@ export function PetCard({ pet }) {
             className='btn btn-outline-primary btn-sm'
             onClick={(e) => {
               e.stopPropagation()
-              handleDelete(pet._id)
+              navigate(`/pets/${pet._id}`)
             }}
           >
             <BsFillPencilFill className='mx-1'></BsFillPencilFill>
@@ -67,7 +67,7 @@ export function PetCard({ pet }) {
           <h5 className='card-title text-center'>{pet.species}</h5>
           <p className='card-text text-center'>{pet.description}</p>
         </div>
-        <div class='card-footer text-center border-primary'>
+        <div className='card-footer text-center border-primary'>
           <strong>Peso {pet.weight}Kg</strong>
         </div>
       </div>

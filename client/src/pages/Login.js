@@ -1,11 +1,14 @@
 import loginService from '../services/login.service.js'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 export function Login() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const [user, setUser] = useState('')
+  console.log(user)
 
   const handleLogin = async (event) => {
     event.preventDefault()
@@ -20,6 +23,10 @@ export function Login() {
 
       setEmail('')
       setPassword('')
+
+      if (user) {
+        navigate('/perfil')
+      }
     } catch (error) {
       console.error(error)
     }

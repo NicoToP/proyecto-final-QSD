@@ -1,12 +1,15 @@
 import registerService from '../services/register.service.js'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 export function Register() {
+  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const [user, setUser] = useState(null)
+  console.log(user)
 
   const handleRegister = async (event) => {
     event.preventDefault()
@@ -23,6 +26,10 @@ export function Register() {
       setUser('')
       setEmail('')
       setPassword('')
+
+      if (user) {
+        navigate('/login')
+      }
     } catch (error) {
       console.error(error)
     }
@@ -32,7 +39,7 @@ export function Register() {
     <div className='col-md-12'>
       <div className='card card-container'>
         <img
-          src='/img/logo.png'
+          src='/img/favicon.png'
           alt='profile-img'
           className='profile-img-card'
         />

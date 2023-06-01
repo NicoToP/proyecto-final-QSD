@@ -130,7 +130,7 @@ export function Navbar() {
                     to={'/login'}
                     className='nav-link btn btn-outline-light'
                   >
-                    Login
+                    Inicia sesión
                   </Link>
                 </li>
 
@@ -139,7 +139,7 @@ export function Navbar() {
                     to={'/register'}
                     className='nav-link btn btn-outline-light'
                   >
-                    Sign Up
+                    Regístrate
                   </Link>
                 </li>
               </div>

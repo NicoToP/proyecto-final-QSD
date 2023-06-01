@@ -69,7 +69,7 @@ export function UserPage() {
   return (
     <>
       <div className='row'>
-        <div className='col-sm-2 col-md-2 col-xl-2 align-self-center mx-auto bg-secondary bg-opacity-10 rounded-3 p-4'>
+        <div className='col-sm-12 col-md-2 col-xl-2 align-self-center mx-auto bg-secondary bg-opacity-10 rounded-3 p-4'>
           <h4 className='fs-5 text-center bg-primary rounded-3 p-2 bg-opacity-25'>
             ¿Qué deseas hacer?
           </h4>
@@ -86,7 +86,7 @@ export function UserPage() {
             ))}
           </nav>
         </div>
-        <div className='col-sm-8 col-md-8 col-xl-8 mx-auto bg-secondary bg-opacity-10 rounded-3 p-4 my-4'>
+        <div className='col-sm-12 col-md-8 col-xl-8 mx-auto bg-secondary bg-opacity-10 rounded-3 p-4 my-4 align-self-center'>
           {mensaje()}
           {componentRendered}
         </div>

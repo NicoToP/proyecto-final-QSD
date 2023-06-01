@@ -71,13 +71,13 @@ export function ServicesPage() {
       </div>
 
       <div className='row m-5 bg-secondary bg-opacity-10 rounded-4 p-3'>
-        <div className='col-md-5 col-sm-12'>
+        <div className='col-md-5 col-sm-12 align-self-center'>
           <img
             className='img-fluid mx-auto d-block '
             src='/img/Guarderia.png'
             alt=''
-            height='450'
-            width='450'
+            height='400'
+            width='400'
           />
         </div>
 

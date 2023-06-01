@@ -12,11 +12,7 @@ export function RecordUser() {
 
   const mensaje = () => {
     if (tableActive === '')
-      return (
-        <h3 className='bg-primary bg-opacity-25 p-3 rounded-3'>
-          ¿Cuál historial deseas ver?
-        </h3>
-      )
+      return <h3 className='text-center'>¿Cuál historial deseas ver?</h3>
   }
 
   switch (tableActive) {
@@ -46,47 +42,48 @@ export function RecordUser() {
 
   return (
     <>
-      <div className='container-fluid d-flex justify-content-center'>
-        {mensaje()}
+      <div className='row  justify-content-center'>
+        <div className='col-ms-12 col-md-8 col-lg-6 bg-primary bg-opacity-25 p-3 rounded-3 mb-3'>{mensaje()}</div>
+        <div className='col-ms-12 col-md-10 col-lg-12'>
+          <nav class='nav d-flex justify-content-evenly m-2'>
+            <button
+              onClick={() => changeTable('banos')}
+              type='button'
+              class='btn btn-outline-primary my-2'
+            >
+              Baños
+            </button>
+            <button
+              onClick={() => changeTable('guarderia')}
+              type='button'
+              class='btn btn-outline-primary my-2'
+            >
+              Guarderia
+            </button>
+            <button
+              onClick={() => changeTable('peluqueria')}
+              type='button'
+              class='btn btn-outline-primary my-2'
+            >
+              Peluqueria
+            </button>
+            <button
+              onClick={() => changeTable('virtuales')}
+              type='button'
+              class='btn btn-outline-primary my-2'
+            >
+              Consultas Virtuales
+            </button>
+            <button
+              onClick={() => changeTable('presenciales')}
+              type='button'
+              class='btn btn-outline-primary my-2'
+            >
+              consultas Presenciales
+            </button>
+          </nav>
+        </div>
       </div>
-      <nav class='nav d-flex justify-content-evenly m-2'>
-        <button
-          onClick={() => changeTable('banos')}
-          type='button'
-          class='btn btn-outline-primary my-2'
-        >
-          Baños
-        </button>
-        <button
-          onClick={() => changeTable('guarderia')}
-          type='button'
-          class='btn btn-outline-primary my-2'
-        >
-          Guarderia
-        </button>
-        <button
-          onClick={() => changeTable('peluqueria')}
-          type='button'
-          class='btn btn-outline-primary my-2'
-        >
-          Peluqueria
-        </button>
-        <button
-          onClick={() => changeTable('virtuales')}
-          type='button'
-          class='btn btn-outline-primary my-2'
-        >
-          Consultas Virtuales
-        </button>
-        <button
-          onClick={() => changeTable('presenciales')}
-          type='button'
-          class='btn btn-outline-primary my-2'
-        >
-          consultas Presenciales
-        </button>
-      </nav>
-
       <h2 className='text-center'>{title}</h2>
       <div className='table-responsive p-2 m-2'>{tableRendered}</div>
     </>

@@ -31,7 +31,7 @@ export function Navbar() {
     },
     {
       path: '/appointments',
-      name: 'Citas Medicas',
+      name: 'Citas médicas',
     },
     {
       path: '/services',
@@ -95,7 +95,7 @@ export function Navbar() {
               </Link>
             </li>
           )}
-          <ul className='navbar-nav ms-auto'>
+          <ul className='navbar-nav ms-auto me-auto'>
             {menuData.map((item) => (
               <li
                 key={item.name}
@@ -111,7 +111,7 @@ export function Navbar() {
           </ul>
           <div className='ms-auto me-auto'>
             {currentUser ? (
-              <div className='navbar-nav ml-auto'>
+              <div className='navbar-nav'>
                 <li className='nav-item'>
                   <Link to={'/profile'} className='nav-link'>
                     {currentUser.username}
@@ -124,7 +124,7 @@ export function Navbar() {
                 </li>
               </div>
             ) : (
-              <div className='navbar-nav ml-auto'>
+              <div className='navbar-nav'>
                 <li className='nav-item'>
                   <Link
                     to={'/login'}

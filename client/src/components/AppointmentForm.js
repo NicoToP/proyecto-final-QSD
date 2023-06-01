@@ -116,7 +116,7 @@ export function AppointmentForm() {
               </div>
             </div>
             <div class='d-grid gap-2 col-2 my-4 mx-auto'>
-              <button class='btn py-2 btn-outline-success' type='submit'>
+              <button class='btn py-2 btn-outline-primary' type='submit'>
                 ¡Agendar!
               </button>
             </div>

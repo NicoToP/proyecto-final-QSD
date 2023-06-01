@@ -121,6 +121,9 @@ export function PetForm() {
             </div>
             <div className='row justify-content-center my-3'>
               <div className='col-5'>
+                <label for='inputBirthday' class='form-label mt-0'>
+                  Fecha aproximada de nacimiento
+                </label>
                 <Field
                   name='dateBirth'
                   type='date'
@@ -151,7 +154,7 @@ export function PetForm() {
               </div>
             </div>
             <div className='d-grid gap-2 col-2 my-4 mx-auto'>
-              <button type='submit' className='btn py-2 btn-outline-success'>
+              <button type='submit' className='btn py-2 btn-outline-primary'>
                 Registrar
               </button>
             </div>

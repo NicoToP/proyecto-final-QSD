@@ -1,9 +1,3 @@
-const RULES = {
-  OFF: 'off',
-  WARN: 'warn',
-  ERROR: 'error',
-}
-
 module.exports = {
   env: {
     browser: true,
@@ -22,7 +16,5 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  rules: {
-    'no-unused-vars': RULES.WARN,
-  },
+  rules: {},
 }

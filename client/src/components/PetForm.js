@@ -139,7 +139,7 @@ export function PetForm() {
                 <Field
                   name='description'
                   component='textarea'
-                  placeholder='Descripcion'
+                  placeholder='Description'
                   className='form-control'
                 />
                 <ErrorMessage

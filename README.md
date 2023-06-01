@@ -8,7 +8,7 @@
 
 <!-- ToDo: Mejorar la descripción -->
 
-El objetivo del proyecto que los desarrolladores [Sebastian Leal Sanchez](https://www.linkedin.com/in/sebastian-leal-sanchez/) y [Nicolas Torres](https://www.linkedin.com/in/nico-torrespa) es exponer, afianzar y mejorar sus habilidades en programación siguiendo con las mejores practicas. Todas adquiridas durante el Bootcamp Quiero Ser Digital realizado por [BIT](https://bit.institute/) y [KeyCode](https://www.keycode.com.co/) con el patrocinio de [Accenture](https://www.accenture.com/co-es) y la [Fundación Corona](https://www.fundacioncorona.org/)
+El objetivo del proyecto que los desarrolladores [Sebastian Leal Sanchez](https://www.linkedin.com/in/sebastian-leal-sanchez/) y [Nicolas Torres](https://www.linkedin.com/in/nico-torrespa) es exponer, afianzar y mejorar sus habilidades en programación siguiendo con las mejores practicas. Todas adquiridas durante el Bootcamp Quiero Ser Digital operado por [BIT](https://bit.institute/) y [KeyCode](https://www.keycode.com.co/) eh incentivado por [Fondo Quiero Ser Digital](https://quieroserdigital.com/#/), [Global Opportunity Youth Network](https://goyn.org/), [Fundación Corona](https://www.fundacioncorona.org/) y [Inversor](https://www.inversor.org.co/) 
 
 ## Objetivo de la aplicación
 
@@ -20,13 +20,15 @@ Conectar una clínica veterinaria con los dueños de mascotas y sus necesidades.
 
 ## Tecnologías utilizadas
 
-- [React](https://es.react.dev/)
-- [NodeJS](https://nodejs.org/es) y [ExpressJS](https://expressjs.com/es/)
-- [MongoDB](https://www.mongodb.com/)
-- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-- [React Icons](https://react-icons.github.io/react-icons/)
-- [Git/Github](https://github.com/)
-- [Eslint](https://eslint.org/) y [Husky](https://typicode.github.io/husky/)
+- [React](https://es.react.dev/) / Frontend
+- [NodeJS](https://nodejs.org/es) y [ExpressJS](https://expressjs.com/es/) / Backend
+- [MongoDB](https://www.mongodb.com/) / Database
+- [Git/Github](https://github.com/) / Version control
+- [Jest](https://jestjs.io/) / Testing
+- [Railway](https://railway.app/) / Deploy
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) / Responsive web
+- [React Icons](https://react-icons.github.io/react-icons/) / Icons
+- [Eslint](https://eslint.org/), [Husky](https://typicode.github.io/husky/) y [Lint-staged](https://github.com/okonet/lint-staged) / Standard and Software quality 
 
 ## Cómo empezar
 

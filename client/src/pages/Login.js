@@ -43,7 +43,7 @@ export function Login() {
 
         <form onSubmit={handleLogin}>
           <div className='form-group my-3'>
-            <label htmlFor='username'>Username</label>
+            <label htmlFor='username'>Correo</label>
             <input
               type='text'
               value={email}
@@ -54,7 +54,7 @@ export function Login() {
           </div>
 
           <div className='form-group my3'>
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>Contraseña</label>
             <input
               type='password'
               value={password}

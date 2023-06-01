@@ -1,6 +1,7 @@
 import express from 'express'
-import morgan from 'morgan'
+import cors from 'cors'
 import helmet from 'helmet'
+import morgan from 'morgan'
 import path, { dirname } from 'path'
 
 import { fileURLToPath } from 'url'
@@ -16,6 +17,7 @@ const app = express()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // middlewares
+app.use(cors())
 app.use(helmet())
 app.use(morgan('dev')) // para registro de solicitudes en formato 'dev'
 app.use(express.json()) // para manejo de datos en formato JSON

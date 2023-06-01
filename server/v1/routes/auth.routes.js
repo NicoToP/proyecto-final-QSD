@@ -1,30 +1,17 @@
 import { Router } from 'express'
+import { register, login } from '../../controllers/auth.controllers.js'
+
 import {
-  loginHandler,
-  registerHandler,
-} from '../../controllers/auth.controllers.js'
-import {
-  checkExistingRole,
   checkExistingUser,
+  checkSchemaRegister,
 } from '../../middlewares/verityRegister.js'
+
+import { checkSchemaLogin } from '../../middlewares/verityLogin.js'
 
 const authRoutes = Router()
 
-authRoutes.use((req, res, next) => {
-  res.header(
-    'Access-Control-Allow-Headers',
-    'x-access-token, Origin, Content-Type, Accept'
-  )
+authRoutes.post('/register', [checkExistingUser, checkSchemaRegister], register)
 
-  next()
-})
-
-authRoutes.post(
-  '/register',
-  [checkExistingUser, checkExistingRole],
-  registerHandler
-)
-
-authRoutes.post('/login', loginHandler)
+authRoutes.post('/login', [checkSchemaLogin], login)
 
 export default authRoutes

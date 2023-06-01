@@ -1,5 +1,4 @@
 import './App.css'
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import {
   HomePage,
@@ -10,6 +9,7 @@ import {
   AppointmentsPage,
   UserPage,
 } from './pages/index'
+
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { Toaster } from 'react-hot-toast'

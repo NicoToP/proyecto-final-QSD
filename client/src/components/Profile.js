@@ -1,7 +1,6 @@
-import React from 'react'
 /* import AuthService from '../services/auth.service' */
 
-const Profile = () => {
+export default function Profile() {
   /* const currentUser = AuthService.getCurrentUser() */
 
   return (
@@ -50,5 +49,3 @@ const Profile = () => {
     </>
   )
 }
-
-export default Profile

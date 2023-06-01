@@ -1,4 +1,9 @@
+import AuthService from '../services/auth.service'
+
 export function Profile() {
+  const currentUser = AuthService.getCurrentUser()
+  currentUser()
+
   return (
     <>
       <div className='row justify-content-center'>

@@ -1,34 +1,34 @@
-import User from "../models/User.js";
-import { ROLES } from "../models/Role.js";
+import User from '../models/User.js'
+import Joi from '@hapi/joi'
+
+const schemaRegister = Joi.object({
+  name: Joi.string().min(6).max(255).required(),
+  email: Joi.string().min(6).max(255).email().required(),
+  password: Joi.string().min(6).max(255).required(),
+})
 
 export const checkExistingUser = async (req, res, next) => {
-  try {
-    const userFound = await User.findOne({ username: req.body.username });
-    console.log(userFound);
-    /* if (userFound)
-      return res.status(400).json({ message: "The user already exists" }); */
+  const { email } = req.body
+  const isEmailExist = await User.findOne({ email })
 
-    const email = await User.findOne({ email: req.body.email });
-    if (email)
-      return res.status(400).json({ message: "The email already exists" });
-
-    next();
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
-export const checkExistingRole = (req, res, next) => {
-  if (req.body.roles) {
-    for (let i = 0; i < req.body.roles.length; i++) {
-      if (!ROLES.includes(req.body.roles[i])) {
-        res.status(400).send({
-          message: `Failed! Role ${req.body.roles[i]} does not exist!`,
-        });
-        return;
-      }
-    }
+  if (isEmailExist) {
+    return res.status(400).json({
+      error: 'Email ya registrado',
+    })
   }
 
-  next();
-};
+  next()
+}
+
+export const checkSchemaRegister = async (req, res, next) => {
+  const { name, email, password } = req.body
+  const { error } = schemaRegister.validate({ name, email, password })
+
+  if (error) {
+    return res.status(400).json({
+      error: error.details[0].message,
+    })
+  }
+
+  next()
+}

@@ -5,4 +5,5 @@ export { ServicesPage } from './ServicesPage'
 export { ProductsPage } from './ProductsPage'
 export { AppointmentsPage } from './AppointmentsPage'
 export { UserPage } from './UserPage'
-
+export { ContactUsPage } from './ContactUsPage'
+export { AboutProject } from './AboutProject'

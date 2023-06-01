@@ -35,7 +35,7 @@ export function Profile() {
           </button>
         </div>
         <div className='col-2'>
-          <button type='button' class='btn btn-outline-success'>
+          <button type='button' class='btn btn-outline-primary'>
             Guardar
           </button>
         </div>

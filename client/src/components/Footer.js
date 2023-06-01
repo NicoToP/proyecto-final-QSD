@@ -29,13 +29,18 @@ export function Footer() {
                 </Link>
               </li>
               <li className='fs-4'>
+                <Link to='/products' className='text-light'>
+                  Productos
+                </Link>
+              </li>
+              <li className='fs-4'>
                 <Link to='/services' className='text-light'>
                   Servicios
                 </Link>
               </li>
               <li className='fs-4'>
-                <Link to='/products' className='text-light'>
-                  Productos
+                <Link to='/project' className='text-light'>
+                  Proyecto
                 </Link>
               </li>
             </ul>
@@ -45,22 +50,22 @@ export function Footer() {
             <ul>
               <li className='fs-4'>
                 <Link
-                  to='https://es-la.facebook.com/'
-                  target='_blank'
-                  className='text-light'
-                >
-                  <BsFacebook className='align-self-center mx-2'></BsFacebook>
-                  Facebook
-                </Link>
-              </li>
-              <li className='fs-4'>
-                <Link
                   to='https://www.instagram.com/'
                   target='_blank'
                   className='text-light'
                 >
                   <BsInstagram className='align-self-center mx-2'></BsInstagram>
                   Instagram
+                </Link>
+              </li>
+              <li className='fs-4'>
+                <Link
+                  to='https://es-la.facebook.com/'
+                  target='_blank'
+                  className='text-light'
+                >
+                  <BsFacebook className='align-self-center mx-2'></BsFacebook>
+                  Facebook
                 </Link>
               </li>
               <li className='fs-4'>
@@ -76,7 +81,7 @@ export function Footer() {
             </ul>
           </div>
           <div className='col-xs-12 col-md-3 col-lg-3'>
-            <p className='h3'>Contactanos</p>
+            <p className='h3 text-center'>Contactanos</p>
             <form>
               <p>
                 Nuestro equipo se pondrá en contacto contigo lo más rápido

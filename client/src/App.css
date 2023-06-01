@@ -41,8 +41,7 @@ body {
   font-size: 10em;
 }
 
-footer a,
-ul {
+footer a, ul {
   text-decoration: none;
   list-style: none;
   padding: 0px;
@@ -70,7 +69,8 @@ p{
 
 .mascota {
   height: 15vw;
-  
+}
+
 label {
   display: block;
   margin-top: 10px;

@@ -68,6 +68,9 @@ p{
   text-align: justify;
 }
 
+.mascota {
+  height: 15vw;
+  
 label {
   display: block;
   margin-top: 10px;

@@ -35,10 +35,9 @@ export function PetCard({ pet }) {
   }
 
   return (
-    <div className='row justify-content-center'>
-      <div className='col-7'>
+      <div className='col-4'>
         <div
-          className='shadow card mb-3'
+          className='mascota shadow card mb-3'
           onClick={() => navigate(`/pets/${pet._id}`)}
         >
           <div className='card-header d-flex bg-primary bg-opacity-25'>
@@ -76,6 +75,5 @@ export function PetCard({ pet }) {
           </div>
         </div>
       </div>
-    </div>
   )
 }

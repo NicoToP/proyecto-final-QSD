@@ -29,31 +29,35 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   const { email, password } = req.body
 
-  const user = await User.findOne({ email })
+  try {
+    const user = await User.findOne({ email })
 
-  const passwordCorrect =
-    user === null ? false : await bcrypt.compare(password, user.password)
+    const passwordCorrect =
+      user === null ? false : await bcrypt.compare(password, user.password)
 
-  if (!(user && passwordCorrect)) {
-    res.status(401).json({
-      error: 'Correo o Contraseña Invalida',
-    })
-  }
-
-  const token = jwt.sign(
-    {
-      email: user.email,
-      role: user.role,
-      id: user._id,
-    },
-    SECRET,
-    {
-      expiresIn: 60 * 60 * 24 * 7,
+    if (!(user && passwordCorrect)) {
+      res.status(401).json({
+        error: 'Correo o Contraseña Invalida',
+      })
     }
-  )
 
-  res.header('auth-token', token).json({
-    error: null,
-    data: { token },
-  })
+    const token = jwt.sign(
+      {
+        email: user.email,
+        role: user.role,
+        id: user._id,
+      },
+      SECRET,
+      {
+        expiresIn: 60 * 60 * 24 * 7,
+      }
+    )
+
+    res.header('auth-token', token).json({
+      error: null,
+      data: { token },
+    })
+  } catch (error) {
+    console.error(error)
+  }
 }

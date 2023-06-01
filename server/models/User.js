@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
       min: 6,
-      max: 255,
+      max: 40,
     },
     email: {
       type: String,
@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema(
     password: {
       type: String,
       required: true,
-      minlength: 6,
+      minlength: 12,
     },
     role: {
       type: String,

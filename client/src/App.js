@@ -10,6 +10,9 @@ import {
   UserPage,
   ContactUsPage,
   AboutProject,
+  Register,
+  Login,
+  Dev,
 } from './pages/index'
 
 import { Navbar } from './components/Navbar'
@@ -18,8 +21,6 @@ import { Toaster } from 'react-hot-toast'
 import { PetProvider } from './context/petContext'
 import { AppointmentProvider } from './context/AppointmentsContext'
 
-import Login from './components/Login'
-import Register from './components/Register'
 import Profile from './components/Profile'
 
 import Home from './components/Home'
@@ -42,8 +43,8 @@ function App() {
               <Route path='/services' element={<ServicesPage />} />
               <Route path='/products' element={<ProductsPage />} />
               <Route path='/perfil' element={<UserPage />} />
-              <Route path='/contact' element={<ContactUsPage/>}/>
-              <Route path='/project' element={<AboutProject/>}/>
+              <Route path='/contact' element={<ContactUsPage />} />
+              <Route path='/project' element={<AboutProject />} />
               <Route path='*' element={<NotFoundPage />} />
 
               <Route path='/home' element={<Home />} />
@@ -53,6 +54,8 @@ function App() {
               <Route path='/user' element={<BoardUser />} />
               <Route path='/mod' element={<BoardModerator />} />
               <Route path='/admin' element={<BoardAdmin />} />
+
+              <Route path='/dev' element={<Dev />}></Route>
             </Routes>
             <Toaster />
           </div>

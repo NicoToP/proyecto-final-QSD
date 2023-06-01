@@ -1,3 +1,4 @@
+export { Login } from './Login'
 export { HomePage } from './HomePage'
 export { NotFoundPage } from './NotFoundPage'
 export { PetPage } from './PetPage'
@@ -7,3 +8,6 @@ export { AppointmentsPage } from './AppointmentsPage'
 export { UserPage } from './UserPage'
 export { ContactUsPage } from './ContactUsPage'
 export { AboutProject } from './AboutProject'
+export { Register } from './Register'
+
+export { Dev } from './Dev'

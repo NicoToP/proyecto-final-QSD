@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const API_URL = '/api/v1/auth/'
+const API_URL = '/api/v1/auth'
 
 const register = (username, email, password) => {
-  return axios.post(API_URL + 'signup', {
-    username,
+  return axios.post(API_URL + '/register', {
+    name: username,
     email,
     password,
   })
@@ -12,8 +12,8 @@ const register = (username, email, password) => {
 
 const login = async (username, password) => {
   return axios
-    .post(API_URL + 'signin', {
-      username,
+    .post(API_URL + '/signin', {
+      name: username,
       password,
     })
     .then((response) => {

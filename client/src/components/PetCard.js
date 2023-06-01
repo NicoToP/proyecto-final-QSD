@@ -35,45 +35,42 @@ export function PetCard({ pet }) {
   }
 
   return (
-      <div className='col-4'>
-        <div
-          className='mascota shadow card mb-3'
-          onClick={() => navigate(`/pets/${pet._id}`)}
-        >
-          <div className='card-header d-flex bg-primary bg-opacity-25'>
-            {/* Botón para editar */}
-            <button
-              className='btn btn-outline-primary btn-sm'
-              onClick={(e) => {
-                e.stopPropagation()
-                handleDelete(pet._id)
-              }}
-            >
-              <BsFillPencilFill className='mx-1'></BsFillPencilFill>
-            </button>
-            <div className='container d-flex justify-content-center'>
-              <BsHearts className='align-self-center mx-2'></BsHearts>
-              <h2 className='m-0'>{pet.namePet}</h2>
-            </div>
+    <div className='col-4'>
+      <div className='mascota shadow card mb-3'>
+        <div className='card-header d-flex bg-primary bg-opacity-25'>
+          {/* Botón para editar */}
+          <button
+            className='btn btn-outline-primary btn-sm'
+            onClick={(e) => {
+              e.stopPropagation()
+              handleDelete(pet._id)
+            }}
+          >
+            <BsFillPencilFill className='mx-1'></BsFillPencilFill>
+          </button>
+          <div className='container d-flex justify-content-center'>
+            <BsHearts className='align-self-center mx-2'></BsHearts>
+            <h2 className='m-0'>{pet.namePet}</h2>
+          </div>
 
-            <button
-              className='btn btn-outline-danger btn-sm'
-              onClick={(e) => {
-                e.stopPropagation()
-                handleDelete(pet._id)
-              }}
-            >
-              <BsFillTrashFill className='mx-1'></BsFillTrashFill>
-            </button>
-          </div>
-          <div className='card-body'>
-            <h5 className='card-title text-center'>{pet.species}</h5>
-            <p className='card-text text-center'>{pet.description}</p>
-          </div>
-          <div class='card-footer text-center border-primary'>
-            <strong>Peso {pet.weight}Kg</strong>
-          </div>
+          <button
+            className='btn btn-outline-danger btn-sm'
+            onClick={(e) => {
+              e.stopPropagation()
+              handleDelete(pet._id)
+            }}
+          >
+            <BsFillTrashFill className='mx-1'></BsFillTrashFill>
+          </button>
+        </div>
+        <div className='card-body'>
+          <h5 className='card-title text-center'>{pet.species}</h5>
+          <p className='card-text text-center'>{pet.description}</p>
+        </div>
+        <div class='card-footer text-center border-primary'>
+          <strong>Peso {pet.weight}Kg</strong>
         </div>
       </div>
+    </div>
   )
 }

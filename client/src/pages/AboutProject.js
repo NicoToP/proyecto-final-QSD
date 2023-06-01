@@ -19,10 +19,10 @@ export function AboutProject() {
               Este proyecto va enfocado al campo de la veterinaria, por eso es
               una plataforma que acerca a los dueños de sus mascotas con
               especialistas profesionales para su cuidado. Acá los usuarios
-              encontraran información relevante acerca d elos productos que
-              están en venta ademas de ver los servicios ofertados en la
+              encontraran información relevante acerca de los productos que
+              están en venta, ademas de ver los servicios ofertados en la
               veterinaria. Si el usuario lo decide puede iniciar sesión así
-              tendrá un espacio en dodne podrá guardar su información personal,
+              tendrá un espacio en donde podrá guardar su información personal,
               registrar sus mascotas, agendar citas y ver el historial de los
               servicios adquiridos con nosotros.
             </p>
@@ -69,7 +69,7 @@ export function AboutProject() {
             rápidamente nuevas tecnologías y habilidades. Mi objetivo es unirme
             a un equipo dinámico y contribuir al éxito de proyectos desafiantes.
           </p>
-          <h4>¡Contactanos!</h4>
+          <h4 className='text-center'>¡Conozcamos mas!</h4>
           <div className='container-fluid d-flex justify-content-center mt-4 '>
             <button type='button' className='btn btn-dark mx-3 fs-4'>
               <Link
@@ -113,16 +113,16 @@ export function AboutProject() {
           <p className='my-3 fs-5'>
             Soy estudiante de Ingeniería Multimedia con enfoque en desarrollo
             front-end con React y diseño UX/UI. Además con conocimientos en
-            tecnologias tales como MongoDB, HTML, CSS, Bootstrap, NodeJS,
+            tecnologías tales como MongoDB, HTML, CSS, Bootstrap, NodeJS,
             Express, y JavaScript. Mis pasiones incluyen videojuegos,
             fotografía, cine, deportes y viajes. También tengo experiencia en
             modelado 3D, animación 3D, producción y postproducción de video. He
             trabajado en proyectos académicos con diferentes colegas aplicando
-            los conocimientos adqueridos y metodologías aprendidas durante mis
+            los conocimientos adquiridos y metodologías aprendidas durante mis
             años de estudio para la resolución problemas y creación de productos
             multimedia de alta calidad con diseños sofisticados.
           </p>
-          <h4>¡Contactanos!</h4>
+          <h4 className='text-center'>¡Conozcamos mas!</h4>
           <div className='container-fluid d-flex justify-content-center mt-4 '>
             <button type='button' className='btn btn-dark mx-3 fs-4'>
               <Link

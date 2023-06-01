@@ -9,5 +9,3 @@ export { UserPage } from './UserPage'
 export { ContactUsPage } from './ContactUsPage'
 export { AboutProject } from './AboutProject'
 export { Register } from './Register'
-
-export { Dev } from './Dev'

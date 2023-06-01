@@ -9,7 +9,7 @@ export function ServicesPage() {
           <h1 className='text-center my-2'>~ Baños/Peluquería ~</h1>
           <p className='my-3'>
             No solo mantengas a tus peluditos limpios con nosotros, sino que
-            tambien aprovecha nuestro servicio de peluquería. Gatos y perros de
+            también aprovecha nuestro servicio de peluquería. Gatos y perros de
             todos los tamaños y de todos los tipos de pelo son bienvenidos.
           </p>
 
@@ -54,7 +54,7 @@ export function ServicesPage() {
               role='button'
               data-bs-toggle='button'
             >
-              Agenda Aqui
+              Agenda Aquí
             </Link>
           </div>
         </div>
@@ -130,7 +130,7 @@ export function ServicesPage() {
               role='button'
               data-bs-toggle='button'
             >
-              Agenda Aqui
+              Agenda Aquí
             </Link>
           </div>
         </div>

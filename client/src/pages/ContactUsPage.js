@@ -42,7 +42,7 @@ export function ContactUsPage() {
               <input
                 type='email'
                 className='form-control'
-                placeholder='peludito500@......'
+                placeholder='peludito500@adorable.com'
                 aria-label='Email'
               />
             </div>
@@ -59,10 +59,10 @@ export function ContactUsPage() {
             </div>
           </div>
           <div className='d-grid gap-2 col-2 my-4 mx-auto'>
-              <button type='submit' className='btn py-2 btn-primary'>
-                Contactar
-              </button>
-            </div>
+            <button type='submit' className='btn py-2 btn-primary'>
+              Contactar
+            </button>
+          </div>
         </div>
 
         <div className='col-md-5 col-sm-12 align-self-center'>
@@ -74,7 +74,6 @@ export function ContactUsPage() {
             width='400'
           />
         </div>
-        
       </div>
     </>
   )

@@ -12,7 +12,6 @@ import {
   AboutProject,
   Register,
   Login,
-  Dev,
 } from './pages/index'
 
 import { Navbar } from './components/Navbar'
@@ -54,8 +53,6 @@ function App() {
               <Route path='/user' element={<BoardUser />} />
               <Route path='/mod' element={<BoardModerator />} />
               <Route path='/admin' element={<BoardAdmin />} />
-
-              <Route path='/dev' element={<Dev />}></Route>
             </Routes>
             <Toaster />
           </div>

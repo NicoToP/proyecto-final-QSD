@@ -13,10 +13,10 @@ export function NavRecordVertical() {
           Baños
         </button>
         <button type='button' class='btn btn-outline-primary my-2'>
-          Guarderia
+          Guardería
         </button>
         <button type='button' class='btn btn-outline-primary my-2'>
-          Peluqueria
+          Peluquería
         </button>
         <button type='button' class='btn btn-outline-primary my-2'>
           Consultas Virtuales

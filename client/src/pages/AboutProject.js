@@ -146,11 +146,11 @@ export function AboutProject() {
             </button>
           </div>
 
-          <div className='row'>
+          {/* <div className='row'>
             <div className='col-10'>
               <h5></h5>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

@@ -45,9 +45,9 @@ export function AppointmentsPage() {
           </div>
         </div>
 
-        <div className='col-md-5 col-sm-12'>
+        <div className='col-md-5 col-sm-12 align-self-center'>
           <img
-            className='img-fluid mx-auto d-block'
+            className='img-fluid mx-auto d-block '
             src='/img/veterinario.png'
             alt=''
             height='450'
@@ -55,10 +55,10 @@ export function AppointmentsPage() {
           />
         </div>
       </div>
-      <div className='row m-5 bg-secondary bg-opacity-10 rounded-4 p-3'>
-        <div className='col-md-5 col-sm-12'>
+      <div className='row m-5 bg-secondary bg-opacity-10 rounded-4 p-3 '>
+        <div className='col-md-5 col-sm-12 align-self-center'>
           <img
-            className='img-fluid mx-auto d-block'
+            className='img-fluid mx-auto d-block '
             src='/img/veterinarios.png'
             alt=''
             height='450'

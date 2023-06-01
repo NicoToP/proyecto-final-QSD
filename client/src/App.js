@@ -8,6 +8,8 @@ import {
   ProductsPage,
   AppointmentsPage,
   UserPage,
+  ContactUsPage,
+  AboutProject,
 } from './pages/index'
 
 import { Navbar } from './components/Navbar'
@@ -40,6 +42,8 @@ function App() {
               <Route path='/services' element={<ServicesPage />} />
               <Route path='/products' element={<ProductsPage />} />
               <Route path='/perfil' element={<UserPage />} />
+              <Route path='/contact' element={<ContactUsPage/>}/>
+              <Route path='/project' element={<AboutProject/>}/>
               <Route path='*' element={<NotFoundPage />} />
 
               <Route path='/home' element={<Home />} />

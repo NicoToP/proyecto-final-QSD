@@ -19,7 +19,7 @@ export function ListPet() {
       )
 
     return (
-      <div className='col'>
+      <div className='row justify-content-evenly'>
         {pets.map((pet) => (
           <PetCard pet={pet} key={pet._id} />
         ))}
